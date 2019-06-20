@@ -83,7 +83,7 @@ function generateEmails() {
         },
         {
             id: utilService.makeId(),
-            title: 'title',
+            title: 'ferfesf',
             txt: 'txt',
             from: 'from',
             date: utilService.makeDate(),
@@ -93,7 +93,7 @@ function generateEmails() {
         },
         {
             id: utilService.makeId(),
-            title: 'title',
+            title: 'judjdjdjdididid',
             txt: 'txt',
             from: 'from',
             date: utilService.makeDate(),

@@ -1,0 +1,9 @@
+header{
+    height: 60px;
+    background-color: orange;
+    text-align: center;
+}
+
+header nav{
+    padding-top: 20px;
+}

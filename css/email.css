@@ -1,0 +1,15 @@
+
+.email-page-comtainer{
+    display: flex;
+}
+
+.nav-side{
+    background-color: lightsalmon;
+    width: 20%;
+    height: 700px;
+    /* position: absolute; */
+}
+.emailApp-contaider{
+    background-color: lemonchiffon;
+    width:80%;
+}

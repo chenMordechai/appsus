@@ -1,0 +1,154 @@
+import {
+    storageService
+} from './storage.service.js'
+import {
+    utilService
+} from './util.service.js'
+
+export const bookService = {
+    getEmailById,
+    dleateEmail,
+    generateBooks,
+    query
+
+}
+
+const EMAIL_KEY = 'emails';
+
+var emailsDB = [];
+
+
+
+function getEmailById(emailId) {
+    var emailById = query()
+        .then(emails => {
+            const emails = emails.find(email => email.id === emailId);
+            return Promise.resolve(email)
+        })
+    return emailById
+}
+
+function dleateEmail(emailId) {
+    console.log('delete in the service')
+    const emailIdx = emailDB.findIndex(email => email.id === emailId)
+    emailsDB.splice(emailIdx, 1)
+    storageService.store(EMAIL_KEY, emailsDB)
+}
+
+
+
+//   function saveReview(bookId, bookReview) {
+//     const book = booksDB.find(book => book.id === bookId)
+//     book.reviews.unshift(bookReview)
+//     console.log('booooooook', book)
+//     storageService.store(BOOKS_KEY, booksDB)
+
+//   }
+
+function query() {
+    var emails = storageService.load(EMAIL_KEY);
+    if (!emails) {
+        emails = generateEmails();
+        storageService.store(EMAIL_KEY, emails)
+    }
+    emailsDB = emails
+    // console.log('chen',booksDB)
+    return Promise.resolve(emailsDB);
+}
+
+
+
+function generateBooks() {
+
+    return [{
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        },
+        {
+            title: 'title',
+            txt: 'txt',
+            from: 'from',
+            date: 'date',
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+        }
+    ]
+}

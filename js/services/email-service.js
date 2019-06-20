@@ -61,6 +61,7 @@ function query() {
 function generateEmails() {
 
     return [{
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -70,6 +71,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -79,6 +81,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -88,6 +91,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -97,6 +101,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -106,6 +111,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -115,6 +121,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -124,6 +131,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -133,6 +141,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -142,6 +151,7 @@ function generateEmails() {
             isTrash: false
         },
         {
+            id: utilService.makeId(),
             title: 'title',
             txt: 'txt',
             from: 'from',

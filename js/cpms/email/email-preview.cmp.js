@@ -18,11 +18,11 @@ data() {
 },
 created() {
 
-    console.log('email preview has created');
+    // console.log('email preview has created');
 },
 computed:{
     emailUrl() {
-        console.log('bla bla',this.email.id)
+        // console.log('bla bla',this.email.id)
         return '/email/' + this.email.id
     },
     // emailUrl() {

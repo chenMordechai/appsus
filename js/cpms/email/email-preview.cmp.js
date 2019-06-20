@@ -1,13 +1,16 @@
+
+
+
 export default {
     template: `
     <section>
    
     <router-link :to="emailUrl" >
     <li class="single-email">
-    <h3> {{email.from}}</h3> 
-    <h3> {{email.title}}</h3>
-    <h3> {{email.txt}}</h3>
-    <h3> {{email.date}}</h3>
+    <h4> {{email.from}}</h4> 
+    <p> {{email.title}} <span> {{email.txt}}</span></p>
+  
+    <h4> {{email.date}}</h4>
     </li>
     </router-link>
     </section>

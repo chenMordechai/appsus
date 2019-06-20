@@ -1,13 +1,13 @@
 export default {
     template: `
         <section class="email-filter-container">
-        <input type="text" autofocus placeholder="search" v-model="filterBy.title"  />
-        <select v-model="filterBy.isRead" >
+        <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
+        <select v-model="filterBy.isRead"  >
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
                      </select>
-                     <button v-on:click="emitFilter">search</button>
+                     <!-- <button v-on:click="emitFilter"><i class="fas fa-search"></i></button> -->
     </section>
     `,
     data() {

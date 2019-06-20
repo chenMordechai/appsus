@@ -4,12 +4,14 @@
 
 .nav-side {
     background-color: lightsalmon;
-    width: 20%;
+    min-width: 200px;
     height: 700px;
-    /* position: absolute; */
+    max-width: 200px;
 }
+    /* position: absolute; */
 
-.emailApp-contaider {
+
+.emailApp-container {
     background-color: lemonchiffon;
     width: 80%;
 }
@@ -60,14 +62,47 @@ cursor: pointer;
 .email-list{
     display:flex;
     flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    padding-inline-start: 84px;
+
 }
 
 .single-email{
     display: flex;
-    width: 800px;
-    justify-content: space-around;
-    border: 1px solid black; 
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(201, 195, 195); 
+    padding: 10px;
+    height: 30px;
+    color: black;
 }
+
+.single-email>h4{
+    width: 130px;
+    text-align: left;
+    
+}
+.single-email>h4:last-child{
+    
+    text-align: right;
+    
+}
+.single-email>p{
+    width: 450px;
+    text-align: left;
+    
+}
+
+.single-email>p>span{
+    color: gray;
+    
+}
+
+
+
 a{
     text-decoration: none;
 }
@@ -82,6 +117,15 @@ a{
     align-items: center;
     justify-content: center
 }
+.email-filter-container>select,input,button{
+ height: 30px;
+ border: 1px solid rgb(179, 174, 174);
+ margin:5px;
+ border-radius: 4px;
+}
+
+
+
 
 .modal{
     background-color: black;

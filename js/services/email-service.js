@@ -62,11 +62,11 @@ function query() {
 function generateEmails() {
 
     return [{
-            id: '14geh5',
+            id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(37),
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: true,
             isFavorite: false,
             isTrash: false
@@ -74,7 +74,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(37),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -84,7 +84,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'ferfesf',
-            txt: 'txt',
+            txt: utilService.makeLorem(27),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -94,7 +94,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'judjdjdjdididid',
-            txt: 'txt',
+            txt: utilService.makeLorem(36),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -104,7 +104,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(46),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -114,7 +114,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(36),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -124,7 +124,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(40),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -134,7 +134,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(40),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -144,7 +144,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(50),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -154,7 +154,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(40),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,

@@ -5,10 +5,10 @@ import {
     utilService
 } from './util.service.js'
 
-export const bookService = {
+export const emailService = {
     getEmailById,
     dleateEmail,
-    generateBooks,
+    generateEmails,
     query
 
 }
@@ -22,7 +22,7 @@ var emailsDB = [];
 function getEmailById(emailId) {
     var emailById = query()
         .then(emails => {
-            const emails = emails.find(email => email.id === emailId);
+            const email = emails.find(email => email.id === emailId);
             return Promise.resolve(email)
         })
     return emailById
@@ -58,7 +58,7 @@ function query() {
 
 
 
-function generateBooks() {
+function generateEmails() {
 
     return [{
             title: 'title',

@@ -5,103 +5,65 @@ import {
 
 export default {
     template: `
-    <section v-if="book">
-                <div class="book-in-details" >
-                    <button> back to email list</button>
-                <h1>Email Details</h1>
-                    <h1>title: {{email.title}}</h1>
-                    <h2> {{getPageCount}} , {{getpublishedDate}}</h2>
-                    <long-text v-bind:txt="book.description"></long-text>
-                    <img  v-bind:src="book.thumbnail"/>
-                    <h2 :class="priceClass" >Price: {{book.listPrice.amount}}{{ getCurrencyIcon}}</h2>
-                <h3 class = "sale">{{bookOnSale}}</h3>
+    <section class="emailDetails-container" v-if="email">
+    <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
+                     <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
+                <h2>{{email.title}}</h2>
+                <div class="emailFrom">
+              <h3 ><i class="fas fa-user-circle"></i> {{email.from}}</h3>
+              <h3>{{email.date}}</h3>
+              </div>
+               <p>{{email.txt}}</p>
+                <br>
+                <div class="email-button">
+               <button> answer</button>   <button>forward</button>
+               </div>
                 </div>
-                <review-add :book="book"></review-add>
         </section>
     `,
     data() {
         return {
-            book: null,
+            email: {
+                id: '14geh5',
+                title: 'whats up??',
+                txt: 'i am miss you so nutch',
+                from: 'nadav sabah',
+                date: '20/3/2019',
+                isRead: false,
+                isFavorite: false,
+                isTrash: false
+            },
 
         }
     },
-    created() {
-        console.log('params:', this.$route.params.bookId);
-        const bookId = this.$route.params.bookId;
-        bookService.getById(bookId)
-            .then(book => this.book = book) 
+    created() { //get id from route.params
+        // console.log('params:', this.$route.params.emailId);
+        // const emaiId = this.$route.params.emailId;
+        // emailService.getEmailById(emaiId)
+        //     .then(email => this.email = email) 
         },
         
         mounted(){
-           
-    },
+            
+        },
+    
     computed: {
+        emailUrl() {
+            // console.log(this.book.id)
+            return '/email'
+        },  
 
-        invalid() {
-            return !this.car.desc || this.car.checkedNames.length === 0
-        },
-
-        bookOnSale() {
-            var isOnSale = this.book.listPrice.isOnSale
-            console.log(isOnSale)
-            if (isOnSale) {
-                return 'sale!!!'
-            } else {
-                return ''
-            }
-        },
-
-
-
-        priceClass() {
-            if (this.book.listPrice.amount >= 150) {
-                return 'expensive'
-            } else if (this.book.listPrice.amount <= 20) {
-                return 'cheap'
-            }
-        },
-
-        getpublishedDate() {
-            var publishedDate = this.book.publishedDate
-            console.log(publishedDate)
-            if (publishedDate <= 2009) {
-                return 'Veteran Book'
-            } else if (publishedDate >= 2018) {
-                return 'new'
-            }
-        },
-
-        getPageCount() {
-            var pageCount = this.book.pageCount
-            if (pageCount >= 500) {
-                return 'long reading'
-            } else if (pageCount < 500 && pageCount >= 200)
-                return 'Decent Reading'
-            else if (pageCount < 200 && pageCount >= 100)
-                return 'Light Reading'
-                else return 'Short Reading'
-        },
-
-        getCurrencyIcon() {
-            var currencyCode = this.book.listPrice.currencyCode
-            if (currencyCode === 'EUR') {
-                return '€'
-            } else if (currencyCode === 'ILS') {
-                return '₪'
-            } else {
-                return '$'
-            }
-        }
     },
 
     methods: {
-        removeDisplay() {
-            this.$emit('hide');
-        }
+        deleteEmail(){
+            const emailId =this.email.id
+            console.log('email id = ', emailId)
+             emailService.dleateEmail(emailId)
+         }
     },
     components: {
-        longText,
-        reviewAdd
+     
     }
 
 }

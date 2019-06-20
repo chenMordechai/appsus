@@ -29,8 +29,9 @@ function getEmailById(emailId) {
 }
 
 function dleateEmail(emailId) {
-    console.log('delete in the service')
-    const emailIdx = emailDB.findIndex(email => email.id === emailId)
+    console.log('delete in the service', emailId)
+    const emailIdx = emailsDB.findIndex(email => email.id === emailId)
+    console.log(emailIdx)
     emailsDB.splice(emailIdx, 1)
     storageService.store(EMAIL_KEY, emailsDB)
 }
@@ -61,7 +62,7 @@ function query() {
 function generateEmails() {
 
     return [{
-            id: utilService.makeId(),
+            id: '14geh5',
             title: 'title',
             txt: 'txt',
             from: 'from',
@@ -75,7 +76,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -85,7 +86,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -95,7 +96,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -105,7 +106,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -115,7 +116,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -125,7 +126,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -135,7 +136,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -145,7 +146,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -155,7 +156,7 @@ function generateEmails() {
             title: 'title',
             txt: 'txt',
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: false,
             isFavorite: false,
             isTrash: false

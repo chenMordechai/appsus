@@ -75,4 +75,11 @@ a{
 .email-open-container{
  display: flex;
 }
+.email-filter-container{
+    height: 70px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 

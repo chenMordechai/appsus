@@ -1,7 +1,6 @@
 export default {
     template: `
-        <section class="book-filter">
-        <h1>Email Filter</h1>
+        <section class="email-filter-container">
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  />
         <select v-model="filterBy.isRead" >
         <option>All</option>

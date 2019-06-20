@@ -14,10 +14,9 @@ export default {
        <section class="email-page-comtainer">
        <nav-side> </nav-side>
        <div class="emailApp-container">
-    <email-filter @filtered="setFilter"></email-filter>
-    <email-list :emails="emailsToShow"></email-list>
-    <email-details ></email-details> 
-    </div>
+       <email-filter @filtered="setFilter"></email-filter>
+       <email-list :emails="emailsToShow"></email-list>
+       </div>
 
         </section>
     `,
@@ -39,7 +38,7 @@ export default {
 
     },
     computed: {
-       
+
         emailsToShow() {
             if (!this.filter) return this.emails;
             else if (this.filter.isRead === 'Read') {

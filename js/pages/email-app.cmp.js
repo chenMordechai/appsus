@@ -13,11 +13,11 @@ export default {
     template: `
        <section class="email-page-comtainer">
        <nav-side> </nav-side>
-       <div class="emailApp-contaider">
+       <div class="emailApp-container">
        <h1>Email App</h1>
 
     <email-filter></email-filter>
-    <email-list></email-list>
+    <email-list :emails="emailsToShow"></email-list>
     <email-details ></email-details> 
     </div>
 
@@ -41,12 +41,13 @@ export default {
 
     },
     computed: {
-        // booksToShow() {
-        //     if (!this.filter) return this.books;
-        //     return this.books.filter(book => book.title.includes(this.filter.title)
-        //     &&  book.listPrice.amount >= this.filter.fromPrice 
-        //     &&  book.listPrice.amount <= this.filter.toPrice )
-        // }
+        emailsToShow() {
+            // if (!this.filter)
+            console.log('in emails to show')
+             return this.emails;
+            // return this.books.filter(book => book.title.includes(this.filter.title)
+          
+         }
     },
     methods: {
         // setFilter(filter) {

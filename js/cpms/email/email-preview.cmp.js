@@ -18,9 +18,10 @@ data() {
 },
 created() {
 },
+
 computed:{
     emailUrl() {
-        
+        // console.log('bla bla',this.email.id)
         return '/email/' + this.email.id
     },
     

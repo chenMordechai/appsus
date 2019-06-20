@@ -1,3 +1,4 @@
+import navSide from '../cpms/email/nav-side.cmp.js'
 
 import {
     emailService
@@ -5,7 +6,10 @@ import {
 
 export default {
     template: `
-    <section class="emailDetails-container" v-if="email">
+
+    <section class="email-open-container" v-if="email">
+    <nav-side> </nav-side>
+<div class="emailDetails-container">
     <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
                      <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
                 <h2>{{email.title}}</h2>
@@ -16,31 +20,23 @@ export default {
                <p>{{email.txt}}</p>
                 <br>
                 <div class="email-button">
-               <button> answer</button>   <button>forward</button>
+            <button>forward <i class="fas fa-reply"></i> </button>   <button>answer <i class="fas fa-arrow-right"></i></button>   
                </div>
                 </div>
+</div>
         </section>
     `,
     data() {
         return {
-            email: {
-                id: '14geh5',
-                title: 'whats up??',
-                txt: 'i am miss you so nutch',
-                from: 'nadav sabah',
-                date: '20/3/2019',
-                isRead: false,
-                isFavorite: false,
-                isTrash: false
-            },
+            email: null
 
         }
     },
     created() { //get id from route.params
-        // console.log('params:', this.$route.params.emailId);
-        // const emaiId = this.$route.params.emailId;
-        // emailService.getEmailById(emaiId)
-        //     .then(email => this.email = email) 
+        console.log('params:', this.$route.params.emailId);
+        const emaiId = this.$route.params.emailId;
+        emailService.getEmailById(emaiId)
+            .then(email => this.email = email) 
         },
         
         mounted(){
@@ -60,10 +56,11 @@ export default {
             const emailId =this.email.id
             console.log('email id = ', emailId)
              emailService.dleateEmail(emailId)
+             this.$router.push('/email')
          }
     },
     components: {
-     
+        navSide
     }
 
 }

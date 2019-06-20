@@ -14,9 +14,7 @@ export default {
        <section class="email-page-comtainer">
        <nav-side> </nav-side>
        <div class="emailApp-container">
-       <h1>Email App</h1>
-
-    <email-filter></email-filter>
+    <email-filter @filtered="setFilter"></email-filter>
     <email-list :emails="emailsToShow"></email-list>
     <email-details ></email-details> 
     </div>
@@ -27,7 +25,9 @@ export default {
     data() {
         return {
             emails: [],
-    
+            filter: null,
+            // selectedEmail: ''
+
         }
     },
     created() {
@@ -40,18 +40,36 @@ export default {
     },
     computed: {
         emailsToShow() {
-            // if (!this.filter)
-            console.log('in emails to show')
-             return this.emails;
-            // return this.books.filter(book => book.title.includes(this.filter.title)
-          
-         }
+            if (!this.filter) return this.emails;
+            else if(this.filter.isRead=== 'Read'){
+                return this.emails.filter(email =>{
+                 email.title.includes(this.filter.title)
+                &&  email.isRead === true })
+            }else if(this.filter.isRead=== 'UnRead'){
+                return this.emails.filter(email =>{ email.title.includes(this.filter.title)
+                &&  email.isRead=== false} )
+            }else return this.emails
+        
+        }
+        // emailsToShow() {
+        //     if (!this.filter) return this.emails;
+        //     else if(this.filter.ifRead=== 'Read'){
+        //        const x= this.emails.filter(email =>{
+        //          return email.ifRead === true })
+        //          console.log('chenchen,',x)
+        //     }else if(this.filter.ifRead=== 'UnRead'){
+        //         return this.emails.filter(email =>{   email.ifRead=== false} )
+        //     }else return this.emails
+        
+        // }
+
+        
     },
     methods: {
-        // setFilter(filter) {
-        //     console.log('Book App got the filter', filter.title , filter.fromPrice , filter.toPrice);
-        //     this.filter = filter
-        // },
+        setFilter(filter) {
+            console.log('Book App got the filter', filter.title, filter.ifRead);
+            this.filter = filter
+        },
         // selectBook(bookId) {
         //     this.selectedBook = this.books.find(book => book.id === bookId)
         //     console.log(this.selectedBook,'selected book is');

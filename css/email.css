@@ -13,3 +13,18 @@
     background-color: lemonchiffon;
     width:80%;
 }
+.email-list{
+    display:flex;
+    flex-direction: column;
+}
+
+.single-email{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    border: 1px solid black; 
+}
+a{
+    text-decoration: none;
+}
+

@@ -3,7 +3,7 @@ export default {
         <section class="book-filter">
         <h1>Email Filter</h1>
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  />
-        <select v-model="filterBy.ifRead" >
+        <select v-model="filterBy.isRead" >
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
@@ -15,7 +15,7 @@ export default {
         return {
             filterBy: {
                 title: '',
-                ifRead:'All',
+                isRead: 'All',
             }
         }
     },
@@ -26,7 +26,7 @@ export default {
 
         }
     },
-    computed:{
+    computed: {
 
     }
 }

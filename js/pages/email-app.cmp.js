@@ -39,35 +39,26 @@ export default {
 
     },
     computed: {
+       
         emailsToShow() {
             if (!this.filter) return this.emails;
-            else if(this.filter.isRead=== 'Read'){
-                return this.emails.filter(email =>{
-                 email.title.includes(this.filter.title)
-                &&  email.isRead === true })
-            }else if(this.filter.isRead=== 'UnRead'){
-                return this.emails.filter(email =>{ email.title.includes(this.filter.title)
-                &&  email.isRead=== false} )
-            }else return this.emails
-        
+            else if (this.filter.isRead === 'Read') {
+                console.log(this.filter.isRead)
+                return this.emails.filter(email => email.title.includes(this.filter.title) &&
+                    email.isRead === true)
+            } else if (this.filter.isRead === 'UnRead') {
+                console.log(this.filter.isRead)
+                return this.emails.filter(email => email.title.includes(this.filter.title) &&
+                    email.isRead === false)
+            } else if (this.filter.isRead === 'All') {
+                return this.emails.filter(email => email.title.includes(this.filter.title))
+            }
         }
-        // emailsToShow() {
-        //     if (!this.filter) return this.emails;
-        //     else if(this.filter.ifRead=== 'Read'){
-        //        const x= this.emails.filter(email =>{
-        //          return email.ifRead === true })
-        //          console.log('chenchen,',x)
-        //     }else if(this.filter.ifRead=== 'UnRead'){
-        //         return this.emails.filter(email =>{   email.ifRead=== false} )
-        //     }else return this.emails
-        
-        // }
 
-        
     },
     methods: {
         setFilter(filter) {
-            console.log('Book App got the filter', filter.title, filter.ifRead);
+            console.log('Book App got the filter', filter.title, filter.isRead);
             this.filter = filter
         },
         // selectBook(bookId) {

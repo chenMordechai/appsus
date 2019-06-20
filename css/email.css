@@ -83,3 +83,7 @@ a{
     justify-content: center
 }
 
+.modal{
+    background-color: black;
+    color:white;
+}

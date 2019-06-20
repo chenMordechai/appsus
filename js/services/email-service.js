@@ -67,7 +67,7 @@ function generateEmails() {
             txt: 'txt',
             from: 'from',
             date: 'date',
-            isRead:true,
+            isRead: true,
             isFavorite: false,
             isTrash: false
         },
@@ -87,7 +87,7 @@ function generateEmails() {
             txt: 'txt',
             from: 'from',
             date: utilService.makeDate(),
-            isRead: false,
+            isRead: true,
             isFavorite: false,
             isTrash: false
         },
@@ -97,7 +97,7 @@ function generateEmails() {
             txt: 'txt',
             from: 'from',
             date: utilService.makeDate(),
-            isRead: false,
+            isRead: true,
             isFavorite: false,
             isTrash: false
         },

@@ -17,18 +17,14 @@ data() {
     return {}
 },
 created() {
-
-    // console.log('email preview has created');
 },
+
 computed:{
     emailUrl() {
         // console.log('bla bla',this.email.id)
         return '/email/' + this.email.id
     },
-    // emailUrl() {
-    //     console.log(this.email.id)
-    //     // return '/book/' + this.book.id
-    // },
+    
 
 },method:{
 },

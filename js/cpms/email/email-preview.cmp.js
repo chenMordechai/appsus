@@ -6,7 +6,7 @@ export default {
     template: `
     <section>
        
-        <!-- <button v-on:click.native="deleteEmail"><i class="fas fa-trash"></i></button> -->
+        <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
         <router-link :to="emailUrl" >
             <li class="single-email">
     <h4>{{email.from}}</h4> 
@@ -52,17 +52,17 @@ computed:{
     textToShow() {
         return this.email.txt.substring(0, 60)
     },
-},method:{
-    test(){
-        console.log('chen')
-    }
-    // deleteEmail(){
-    //     console.log('deleting')
-    //     const emailId =this.email.id
-    //     console.log('email id = ', emailId)
-    //      emailService.dleateEmail(emailId)
+},methods:{
+    // test(){
+    //     console.log('chen')
+    // }
+    deleteEmail(){
+        console.log('deleting')
+        const emailId =this.email.id
+        console.log('email id = ', emailId)
+         emailService.dleateEmail(emailId)
         
-    //  }
+     }
 },
 
 

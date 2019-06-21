@@ -3,6 +3,7 @@ import emailPreview from './email-preview.cmp.js'
 export default {
     template: `
     <section>
+   
     <h1>emails</h1>
     <ul class="email-list">
         <email-preview
@@ -29,6 +30,11 @@ console.log('in the mounted',this.emails)
 console.log('created in the list')
 console.log('emails',this.emails)
 
+    },
+    computed:{
+        click(){
+            console.log('click')
+        }
     },
     components:{
         emailPreview

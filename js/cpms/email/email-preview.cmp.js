@@ -12,11 +12,16 @@ export default {
     </router-link>
     </section>
     `,
+    // v-bind:class="{readClass}"
     props: ['email'],
 data() {
-    return {}
+    return {
+        
+    }
 },
 created() {
+    
+   
 },
 
 computed:{
@@ -24,6 +29,15 @@ computed:{
         // console.log('bla bla',this.email.id)
         return '/email/' + this.email.id
     },
+        // readClass() {
+        //     console.log('isRead',isRead)
+        //     let isRead = this.email.isRead
+        //     let isUnread = !this.email.isRead
+
+        //     let className=''
+        //     if (isRead) return className = 'read'
+        //     if (isUnread) return className = 'unread'
+        // },
     
 
 },method:{

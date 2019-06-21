@@ -9,7 +9,9 @@ export const emailService = {
     getEmailById,
     dleateEmail,
     generateEmails,
-    query
+    query,
+    hendleSentEmail,
+    createEmail,
 
 }
 
@@ -53,10 +55,40 @@ function query() {
         storageService.store(EMAIL_KEY, emails)
     }
     emailsDB = emails
-    // console.log('chen',booksDB)
+    // console.log('emailsssss',emailsDB)
     return Promise.resolve(emailsDB);
 }
 
+function hendleSentEmail(title, from, txt) {
+    const newEmail = createEmail(title, from, txt)
+    console.log('the newEmail is: ', newEmail)
+    //     const book = booksDB.find(book => book.id === bookId)
+    emailsDB.unshift(newEmail)
+    console.log('newEmail', newEmail)
+    console.log('i have one more email?', emailsDB)
+    storageService.store(EMAIL_KEY, emailsDB)
+    
+    
+    }
+
+
+    function createEmail(title = 'My dear friend', from = 'anonymos', txt = 'hello friend') {
+        return {
+            id: utilService.makeId(),
+            title: title,
+            txt: txt,
+            from: from,
+            date: utilService.makeDate(),
+            isRead: false,
+            isFavorite: false,
+            isTrash: false
+
+        }
+
+    }
+
+
+  
 
 
 function generateEmails() {

@@ -61,7 +61,26 @@ function sortEmail(emails,sort) {
     } else {
         console.log('in service title/all')
         emails.sort(function (a, b) {
-            return b.data - a.data;
+            const x = a.date
+            const s =x.replace('-','')
+            const z = s.replace('-','')
+            const y = z.substr(4,7)
+            // const m = z.substr(2,3)
+            // const d = z.substr(0,1)
+
+            // console.log(d)
+
+            const xx = b.date
+            const ss =xx.replace('-','')
+            const zz = ss.replace('-','')
+            const yy = zz.substr(4,7)
+            // const mm = zz.substr(2,3)
+            // const dd = zz.substr(0,1)
+
+
+
+            return  zz-z ;
+            // y-yy && m-mm && d-dd
         });
     }
 
@@ -96,7 +115,7 @@ function generateEmails() {
             title: 'title',
             txt: utilService.makeLorem(100),
             from: 'from',
-            date: utilService.makeDate(),
+            date:'02-05-2019',
             isRead: true,
             isFavorite: false,
             isTrash: false
@@ -136,7 +155,7 @@ function generateEmails() {
             title: 'title',
             txt: utilService.makeLorem(67),
             from: 'from',
-            date: utilService.makeDate(),
+            date: '02-05-2019',
             isRead: false,
             isFavorite: false,
             isTrash: false
@@ -156,7 +175,7 @@ function generateEmails() {
             title: 'title',
             txt: utilService.makeLorem(400),
             from: 'from',
-            date: utilService.makeDate(),
+            date: '13-08-1990',
             isRead: false,
             isFavorite: false,
             isTrash: false

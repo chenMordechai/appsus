@@ -20,7 +20,7 @@ export default {
                <p>{{email.txt}}</p>
                 <br>
                 <div class="email-button">
-            <button>forward <i class="fas fa-reply"></i> </button>   <button>answer <i class="fas fa-arrow-right"></i></button>   
+            <button>forward <i class="fas fa-reply"></i> </button>  <button v-on:click="reply">reply <i class="fas fa-arrow-right"></i></button>   
                </div>
                 </div>
 </div>
@@ -57,6 +57,12 @@ export default {
             console.log('email id = ', emailId)
              emailService.dleateEmail(emailId)
              this.$router.push('/email')
+         },
+         reply(){
+             console.log('reply')
+             const emailfrom = this.email.from
+             console.log(emailfrom)
+             //open the modal with the emailfrom
          }
     },
     components: {

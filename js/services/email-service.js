@@ -12,7 +12,8 @@ export const emailService = {
     query,
     hendleSentEmail,
     createEmail,
-    sortEmail
+    sortEmail,
+    faviriteEmail
 
 }
 
@@ -37,6 +38,15 @@ function dleateEmail(emailId) {
     console.log(emailIdx)
     emailsDB.splice(emailIdx, 1)
     storageService.store(EMAIL_KEY, emailsDB)
+}
+function faviriteEmail(emailId){
+    console.log('faviorite in the service', emailId)
+    const email = emailsDB.find(email => email.id === emailId);
+    console.log( email.isFavorite)
+    email.isFavorite =!email.isFavorite 
+    console.log( email.isFavorite)
+    storageService.store(EMAIL_KEY, emailsDB)
+
 }
 
 function sortByCreated() {

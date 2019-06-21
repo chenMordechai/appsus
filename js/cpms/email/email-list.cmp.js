@@ -5,6 +5,7 @@ export default {
     <section>
     <ul class="email-list">
         <email-preview
+     
          v-for="(currentEmail) in emails" 
          v-bind:key="currentEmail.id"
           v-bind:email="currentEmail"
@@ -38,4 +39,8 @@ export default {
     components:{
         emailPreview
     },
+    method:{
+       
+        }
+    
 }

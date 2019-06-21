@@ -117,7 +117,7 @@ a{
     align-items: center;
     justify-content: center
 }
-.email-filter-container>select,input,button{
+.email-filter-container select,input,button{
  height: 30px;
  border: 1px solid rgb(179, 174, 174);
  margin:5px;
@@ -208,4 +208,56 @@ a{
     color:yellowgreen;
 }
 
+.menu-btn {
+    display: none;
+}
+.nav-side-in-mobile{
+    display: none;
+}
+.btn-filter-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.email-preview-container{
+    display: flex;
+    align-items: center;
+}
 
+@media (max-width:740px) {
+    .emailDetails-container{
+        width: 100%
+    }
+    .emailApp-container {
+        width: 100%
+    }
+    .nav-side{
+            position: fixed;
+            left: -200px;
+            top: 140px;
+            /* transform: translate(100%, 0); */
+            /* transition: transform .6s; */
+            z-index: 10;
+        
+      }
+      .nav-side-in-mobile{
+        display: block;
+            background-color: lightsalmon;
+            min-width: 200px;
+            height: 700px;
+            max-width: 200px;
+            position: absolute;
+            top: 138px;
+            left: 0;
+            margin-left: 8px;
+      }
+
+    
+    .menu-btn {
+        display: block;
+        margin-right: 10px;
+        z-index: 10;
+    }
+
+}

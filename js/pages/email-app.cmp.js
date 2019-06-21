@@ -12,7 +12,9 @@ export default {
     name: 'emailApp',
     template: `
        <section class="email-page-comtainer">
+           <div class="nav-side">
        <nav-side> </nav-side>
+</div>
        <div class="emailApp-container">
        <email-filter @filtered="setFilter" @sorted="setSort"></email-filter>
        <email-list :emails="emailsToShow"></email-list>

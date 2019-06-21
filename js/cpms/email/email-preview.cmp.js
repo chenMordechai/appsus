@@ -4,10 +4,11 @@ import {
 
 export default {
     template: `
-    <section>
-
-        <!-- <button v-on:click.nativ="deleteEmail"><i class="fas fa-trash"></i></button> -->
-        <router-link :to="emailUrl"  >
+    <section class="email-preview-container">
+        <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
+        <button ><i class="fas fa-envelope"></i></button>
+        <button ><i class="far fa-star"></i></button>
+        <router-link :to="emailUrl" >
             <li class="single-email">
     <h4>{{email.from}}</h4> 
     <p> {{email.title}} <span> {{textToShow}}</span></p>    
@@ -26,7 +27,7 @@ data() {
     }
 },
 created() {
-    
+    // console.log('created')
    
 },
 
@@ -35,6 +36,20 @@ computed:{
         
         return '/email/' + this.email.id
     },
+        // readClass() {
+        //     if(this.email.isRead===true){
+        //         console.log('read')
+        //         return 'read'
+        //     }
+        //     else {
+        //         console.log('unRead')
+        //         return 'unread'
+        //     }
+
+           
+            // if (isRead) return 'read'
+            // if (isUnread) return 'unread'
+        // },
     
     textToShow() {
         return this.email.txt.substring(0, 60)
@@ -55,8 +70,17 @@ computed:{
     //     const emailId =this.email.id
     //     console.log('email id = ', emailId)
     //      emailService.dleateEmail(emailId)
+},methods:{
+    // test(){
+    //     console.log('chen')
+    // }
+    deleteEmail(){
+        console.log('deleting')
+        const emailId =this.email.id
+        console.log('email id = ', emailId)
+         emailService.dleateEmail(emailId)
         
-    //  }
+     }
 },
 
 

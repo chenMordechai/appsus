@@ -3,12 +3,17 @@ import navSide from '../cpms/email/nav-side.cmp.js'
 import {
     emailService
 } from "../services/email-service.js"
+import bus from '../event-bus.js';
+
+import eventBus from '../event-bus.js'
 
 export default {
     template: `
 
     <section class="email-open-container" v-if="email">
+    <div class="nav-side">
     <nav-side> </nav-side>
+</div>
 <div class="emailDetails-container">
     <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
                      <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
@@ -20,7 +25,7 @@ export default {
                <p>{{email.txt}}</p>
                 <br>
                 <div class="email-button">
-            <button>forward <i class="fas fa-reply"></i> </button>   <button>answer <i class="fas fa-arrow-right"></i></button>   
+            <button>forward <i class="fas fa-reply"></i> </button>  <button v-on:click="reply">reply <i class="fas fa-arrow-right"></i></button>   
                </div>
                 </div>
 </div>
@@ -33,11 +38,14 @@ export default {
         }
     },
     created() { //get id from route.params
+            console.log('created')
         console.log('params:', this.$route.params.emailId);
         const emaiId = this.$route.params.emailId;
         emailService.getEmailById(emaiId)
             .then(email => {this.email = email
-              if(this.email) this.email.isRead = true}) 
+              if(this.email) this.email.isRead = true})
+              
+
         },
         
         mounted(){
@@ -59,7 +67,16 @@ export default {
             console.log('email id = ', emailId)
              emailService.dleateEmail(emailId)
              this.$router.push('/email')
+         },
+         reply(){
+             console.log('reply')
+             const emailfrom = this.email.from
+             console.log(emailfrom)
+             eventBus.$emit('reply-email',  emailfrom)
+             //open the modal with the emailfrom
          }
+
+       
     },
     components: {
         navSide

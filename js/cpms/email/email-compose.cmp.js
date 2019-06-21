@@ -1,4 +1,6 @@
 import {emailService} from '../../services/email-service.js'
+import eventBus from '../../event-bus.js'
+
 export default {
     name: 'emailCompose',
 
@@ -33,6 +35,14 @@ export default {
                 text: '',
             },
         }
+    },
+    created(){
+        eventBus.$on('reply-email', (emailfrom)=>{
+            this.sentEmail.from = emailfrom
+            console.log('event bus working replay-emil')
+            this.isShown=true
+            
+        })
     },
     computed: { 
     },

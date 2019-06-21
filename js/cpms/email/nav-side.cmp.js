@@ -3,16 +3,21 @@ import emailCompose from './email-compose.cmp.js'
 
 
 export default {
-    name: 'NavSide',
+    name: 'navSide',
     template: `
-            <nav class= " nav-side">
-                    <h1>nav-side</h1>
-                    <email-status> </email-status>
-                    <email-compose> </email-compose>
+         <nav class= "nav" > 
+         <email-status> </email-status>
+         <email-compose> </email-compose>
          </nav>
     `,
     data() {
-        return {}
+        return {
+
+        }
+    },
+    method:{
+        
+
     },
 
     components: {
@@ -23,3 +28,11 @@ export default {
 
 
 }
+// function toggleMenu() {
+//     document.body.classList.toggle('open-menu');
+//     if (document.querySelector('.menu-btn').innerText === "☰") {
+//         document.querySelector('.menu-btn').innerHTML = "X"
+//     } else {
+//         document.querySelector('.menu-btn').innerHTML = "☰"
+//     }
+// }

@@ -10,12 +10,9 @@ export const emailService = {
     dleateEmail,
     generateEmails,
     query,
-<<<<<<< HEAD
     hendleSentEmail,
     createEmail,
-=======
     sortEmail
->>>>>>> 34bfa4058709f3653bd393d59896609909bc3551
 
 }
 

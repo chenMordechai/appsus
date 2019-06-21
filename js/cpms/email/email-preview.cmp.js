@@ -4,8 +4,7 @@ import {
 
 export default {
     template: `
-    <section>
-       
+    <section class="email-preview-container">
         <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
         <router-link :to="emailUrl" >
             <li class="single-email">
@@ -25,7 +24,7 @@ data() {
     }
 },
 created() {
-    
+    // console.log('created')
    
 },
 

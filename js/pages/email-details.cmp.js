@@ -11,7 +11,9 @@ export default {
     template: `
 
     <section class="email-open-container" v-if="email">
+    <div class="nav-side">
     <nav-side> </nav-side>
+</div>
 <div class="emailDetails-container">
     <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
                      <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
@@ -36,11 +38,14 @@ export default {
         }
     },
     created() { //get id from route.params
+            console.log('created')
         console.log('params:', this.$route.params.emailId);
         const emaiId = this.$route.params.emailId;
         emailService.getEmailById(emaiId)
             .then(email => {this.email = email
-              if(this.email) this.email.isRead = true}) 
+              if(this.email) this.email.isRead = true})
+              
+
         },
         
         mounted(){

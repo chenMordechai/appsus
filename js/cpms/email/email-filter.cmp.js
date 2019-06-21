@@ -8,7 +8,7 @@ export default {
             <!-- <div class="nav-side-in-mobile"> -->
             <nav-side class="nav-side-in-mobile" v-if="openNav"></nav-side>
 <!-- </div> -->
-            <div>
+            <div class="btn-filter-container">
  <button class="menu-btn" v-on:click="toggleMenu">☰</button>
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
         <select v-model="filterBy.isRead" @change="emitFilter($event)"  >

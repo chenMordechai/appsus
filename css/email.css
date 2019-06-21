@@ -117,7 +117,7 @@ a{
     align-items: center;
     justify-content: center
 }
-.email-filter-container>select,input,button{
+.email-filter-container select,input,button{
  height: 30px;
  border: 1px solid rgb(179, 174, 174);
  margin:5px;
@@ -214,8 +214,21 @@ a{
 .nav-side-in-mobile{
     display: none;
 }
+.btn-filter-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.email-preview-container{
+    display: flex;
+    align-items: center;
+}
 
 @media (max-width:740px) {
+    .emailDetails-container{
+        width: 100%
+    }
     .emailApp-container {
         width: 100%
     }
@@ -237,7 +250,7 @@ a{
             position: absolute;
             top: 138px;
             left: 0;
-            margin-left: 10px;
+            margin-left: 8px;
       }
 
     

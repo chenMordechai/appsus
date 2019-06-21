@@ -3,15 +3,17 @@ import emailCompose from './email-compose.cmp.js'
 
 
 export default {
-    name: 'NavSide',
+    name: 'navSide',
     template: `
-            <nav class= " nav-side"> 
-                                  <email-status> </email-status>
-                    <email-compose> </email-compose>
+         <nav class= "nav" > 
+         <email-status> </email-status>
+         <email-compose> </email-compose>
          </nav>
     `,
     data() {
-        return {}
+        return {
+
+        }
     },
     method:{
         

@@ -211,27 +211,35 @@ a{
 .menu-btn {
     display: none;
 }
+.nav-side-in-mobile{
+    display: none;
+}
 
 @media (max-width:740px) {
-
-    .nav-side {
-     
+    .emailApp-container {
+        width: 100%
+    }
+    .nav-side{
             position: fixed;
             left: -200px;
             top: 140px;
-            height: 360px;
-            width: 300px;
-            background: #fff;
             /* transform: translate(100%, 0); */
             /* transition: transform .6s; */
             z-index: 10;
         
       }
+      .nav-side-in-mobile{
+        display: block;
+            background-color: lightsalmon;
+            min-width: 200px;
+            height: 700px;
+            max-width: 200px;
+            position: absolute;
+            top: 138px;
+            left: 0;
+            margin-left: 10px;
+      }
 
-      
-      body.open-menu .main-nav {
-        transform: translate(0, 0);
-    }
     
     .menu-btn {
         display: block;

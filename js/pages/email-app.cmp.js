@@ -34,7 +34,7 @@ export default {
         emailService.query()
             .then(emails => {
                 this.emails = emails
-                console.log(this.emails)
+                // console.log(this.emails)
             })
 
     },

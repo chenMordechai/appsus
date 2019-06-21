@@ -36,10 +36,12 @@ export default {
         console.log('params:', this.$route.params.emailId);
         const emaiId = this.$route.params.emailId;
         emailService.getEmailById(emaiId)
-            .then(email => this.email = email) 
+            .then(email => {this.email = email
+              if(this.email) this.email.isRead = true}) 
         },
         
         mounted(){
+         
             
         },
     

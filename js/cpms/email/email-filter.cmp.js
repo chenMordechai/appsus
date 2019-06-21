@@ -1,6 +1,14 @@
+import navSide from '../email/nav-side.cmp.js'
+
+
+
 export default {
     template: `
         <section class="email-filter-container">
+            <nav-side v-if="openNav"></nav-side>
+ <button class="menu-btn" v-on:click="toggleMenu">☰</button>
+
+
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
         <select v-model="filterBy.isRead" @change="emitFilter($event)"  >
         <option>All</option>
@@ -23,9 +31,14 @@ export default {
                 isRead: 'All',
             },
             sortBy:'Sort By',
+            openNav: false,
         }
     },
     methods: {
+        toggleMenu() {
+            console.log('togle')
+            this.openNav= true
+        },
         emitFilter(event) {
             this.filterBy.isRead = event.target.value
             console.log(this.filterBy)
@@ -42,5 +55,8 @@ export default {
 
     computed: {
 
+    },
+    component:{
+        navSide
     }
 }

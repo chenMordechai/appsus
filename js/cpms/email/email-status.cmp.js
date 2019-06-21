@@ -6,6 +6,7 @@ export default {
     <section >
         <h1>Email Status</h1>
         <p>read emails {{coutEmailRead}}%</p>
+        <meter value="0.6">60%</meter>
     </section>
     `
     ,

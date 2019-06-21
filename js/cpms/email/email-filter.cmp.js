@@ -7,6 +7,12 @@ export default {
                          <option>Read</option>
                          <option>UnRead</option>
                      </select>
+                     <select v-model="sortBy" @change="emitSort($event)"  >
+        <option>Sort By</option>
+                         <option>Title</option>
+                         <option>Date</option>
+                     </select>
+
                      <!-- <button v-on:click="emitFilter"><i class="fas fa-search"></i></button> -->
     </section>
     `,
@@ -15,7 +21,8 @@ export default {
             filterBy: {
                 title: '',
                 isRead: 'All',
-            }
+            },
+            sortBy:'Sort By',
         }
     },
     methods: {
@@ -24,8 +31,15 @@ export default {
             console.log(this.filterBy)
             this.$emit('filtered', this.filterBy);
 
+        },
+        emitSort(event) {
+            this.sortBy = event.target.value
+            console.log(this.sortBy)
+            this.$emit('sorted', this.sortBy);
+
         }
     },
+
     computed: {
 
     }

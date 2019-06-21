@@ -14,7 +14,7 @@ export default {
        <section class="email-page-comtainer">
        <nav-side> </nav-side>
        <div class="emailApp-container">
-       <email-filter @filtered="setFilter"></email-filter>
+       <email-filter @filtered="setFilter" @sorted="setSort"></email-filter>
        <email-list :emails="emailsToShow"></email-list>
        </div>
 
@@ -25,6 +25,7 @@ export default {
         return {
             emails: [],
             filter: null,
+            sortBy: null,
             // selectedEmail: ''
 
         }
@@ -57,9 +58,19 @@ export default {
     },
     methods: {
         setFilter(filter) {
-            console.log('Book App got the filter', filter.title, filter.isRead);
+            console.log('email App got the filter', filter.title, filter.isRead);
             this.filter = filter
         },
+
+        setSort(sort) {
+            console.log('email app got the sort ',sort) 
+            this.sortBy = sort
+            console.log(this.emails)
+            emailService.sortEmail(this.emails,sort)
+        }
+
+
+
         // selectBook(bookId) {
         //     this.selectedBook = this.books.find(book => book.id === bookId)
         //     console.log(this.selectedBook,'selected book is');

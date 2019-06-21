@@ -6,6 +6,8 @@ export default {
     template: `
     <section class="email-preview-container">
         <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
+        <button ><i class="fas fa-envelope"></i></button>
+        <button ><i class="far fa-star"></i></button>
         <router-link :to="emailUrl" >
             <li class="single-email">
     <h4>{{email.from}}</h4> 

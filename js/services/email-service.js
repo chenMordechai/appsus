@@ -10,8 +10,12 @@ export const emailService = {
     dleateEmail,
     generateEmails,
     query,
+<<<<<<< HEAD
     hendleSentEmail,
     createEmail,
+=======
+    sortEmail
+>>>>>>> 34bfa4058709f3653bd393d59896609909bc3551
 
 }
 
@@ -38,6 +42,35 @@ function dleateEmail(emailId) {
     storageService.store(EMAIL_KEY, emailsDB)
 }
 
+function sortByCreated() {
+    gTodos.sort(function (a, b) {
+        return b.created - a.created;
+    });
+}
+
+
+function sortEmail(emails,sort) {
+    if (sort === 'Title') {
+        console.log('in service title')
+        emails.sort(function (a, b) {
+            var nameA = a.title.toUpperCase();
+            var nameB = b.title.toUpperCase();
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            return 0;
+        })
+    } else {
+        console.log('in service title/all')
+        emails.sort(function (a, b) {
+            return b.data - a.data;
+        });
+    }
+
+}
 
 
 //   function saveReview(bookId, bookReview) {
@@ -94,11 +127,11 @@ function hendleSentEmail(title, from, txt) {
 function generateEmails() {
 
     return [{
-            id: '14geh5',
+            id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(100),
             from: 'from',
-            date: 'date',
+            date: utilService.makeDate(),
             isRead: true,
             isFavorite: false,
             isTrash: false
@@ -106,7 +139,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(200),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -116,7 +149,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'ferfesf',
-            txt: 'txt',
+            txt: utilService.makeLorem(150),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -126,7 +159,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'judjdjdjdididid',
-            txt: 'txt',
+            txt: utilService.makeLorem(50),
             from: 'from',
             date: utilService.makeDate(),
             isRead: true,
@@ -136,7 +169,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(67),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -146,7 +179,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(270),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -156,7 +189,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(400),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -166,7 +199,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(445),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -176,7 +209,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(500),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,
@@ -186,7 +219,7 @@ function generateEmails() {
         {
             id: utilService.makeId(),
             title: 'title',
-            txt: 'txt',
+            txt: utilService.makeLorem(340),
             from: 'from',
             date: utilService.makeDate(),
             isRead: false,

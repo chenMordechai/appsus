@@ -1,14 +1,19 @@
 export default {
     template: `
-        <section class="book-filter">
-        <h1>Email Filter</h1>
-        <input type="text" autofocus placeholder="search" v-model="filterBy.title"  />
-        <select v-model="filterBy.isRead" >
+        <section class="email-filter-container">
+        <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
+        <select v-model="filterBy.isRead" @change="emitFilter($event)"  >
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
                      </select>
-                     <button v-on:click="emitFilter">search</button>
+                     <select v-model="sortBy" @change="emitSort($event)"  >
+        <option>Sort By</option>
+                         <option>Title</option>
+                         <option>Date</option>
+                     </select>
+
+                     <!-- <button v-on:click="emitFilter"><i class="fas fa-search"></i></button> -->
     </section>
     `,
     data() {
@@ -16,16 +21,25 @@ export default {
             filterBy: {
                 title: '',
                 isRead: 'All',
-            }
+            },
+            sortBy:'Sort By',
         }
     },
     methods: {
-        emitFilter() {
+        emitFilter(event) {
+            this.filterBy.isRead = event.target.value
             console.log(this.filterBy)
             this.$emit('filtered', this.filterBy);
 
+        },
+        emitSort(event) {
+            this.sortBy = event.target.value
+            console.log(this.sortBy)
+            this.$emit('sorted', this.sortBy);
+
         }
     },
+
     computed: {
 
     }

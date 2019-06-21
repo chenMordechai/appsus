@@ -5,9 +5,10 @@ import {
 export default {
     template: `
     <section>
+       
         <!-- <button v-on:click.native="deleteEmail"><i class="fas fa-trash"></i></button> -->
         <router-link :to="emailUrl" >
-            <li class="single-email">
+            <li class="single-email" v-bind:class="{readClass}"  >
     <h4>{{email.from}}</h4> 
     <p> {{email.title}} <span> {{textToShow}}</span></p>
   
@@ -33,20 +34,28 @@ computed:{
         // console.log('bla bla',this.email.id)
         return '/email/' + this.email.id
     },
-        // readClass() {
-        //     console.log('isRead',isRead)
-        //     let isRead = this.email.isRead
-        //     let isUnread = !this.email.isRead
+        readClass() {
+            if(this.email.isRead===true){
+                console.log('read')
+                return 'read'
+            }
+            else {
+                console.log('unRead')
+                return 'unread'
+            }
 
-        //     let className=''
-        //     if (isRead) return className = 'read'
-        //     if (isUnread) return className = 'unread'
-        // },
+           
+            // if (isRead) return 'read'
+            // if (isUnread) return 'unread'
+        },
     
     textToShow() {
         return this.email.txt.substring(0, 60)
     },
 },method:{
+    test(){
+        console.log('chen')
+    }
     // deleteEmail(){
     //     console.log('deleting')
     //     const emailId =this.email.id

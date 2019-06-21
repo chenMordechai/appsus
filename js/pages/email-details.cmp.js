@@ -3,6 +3,9 @@ import navSide from '../cpms/email/nav-side.cmp.js'
 import {
     emailService
 } from "../services/email-service.js"
+import bus from '../event-bus.js';
+
+import eventBus from '../event-bus.js'
 
 export default {
     template: `
@@ -64,8 +67,11 @@ export default {
              console.log('reply')
              const emailfrom = this.email.from
              console.log(emailfrom)
+             eventBus.$emit('reply-email',  emailfrom)
              //open the modal with the emailfrom
          }
+
+       
     },
     components: {
         navSide

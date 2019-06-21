@@ -62,31 +62,16 @@ function sortEmail(emails,sort) {
         })
     } else {
         console.log('in service title/all')
-        emails.sort(function (a, b) {
-            const x = a.date
-            const s =x.replace('-','')
-            const z = s.replace('-','')
-            const y = z.substr(4,7)
-            // const m = z.substr(2,3)
-            // const d = z.substr(0,1)
-
-            // console.log(d)
-
-            const xx = b.date
-            const ss =xx.replace('-','')
-            const zz = ss.replace('-','')
-            const yy = zz.substr(4,7)
-            // const mm = zz.substr(2,3)
-            // const dd = zz.substr(0,1)
-
-
-
-            return  zz-z ;
-            // y-yy && m-mm && d-dd
-        });
+          emails.sort(function(a,b){
+            return dateToNum(b.date) -dateToNum(a.date) ;
+          });
     }
 
 }
+function dateToNum(d) {
+   var c = d.split('-')
+    return Number(c[2]+c[1]+c[0]);
+  }
 
 
 //   function saveReview(bookId, bookReview) {
@@ -244,3 +229,29 @@ function generateEmails() {
         }
     ]
 }
+
+
+
+
+// emails.sort(function (a, b) {
+//     const x = a.date
+//     const s =x.replace('-','')
+//     const z = s.replace('-','')
+//     const y = z.substr(4,7)
+//     // const m = z.substr(2,3)
+//     // const d = z.substr(0,1)
+
+//     // console.log(d)
+
+//     const xx = b.date
+//     const ss =xx.replace('-','')
+//     const zz = ss.replace('-','')
+//     const yy = zz.substr(4,7)
+//     // const mm = zz.substr(2,3)
+//     // const dd = zz.substr(0,1)
+
+
+
+//     return  zz-z ;
+//     // y-yy && m-mm && d-dd
+// });

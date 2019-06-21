@@ -18,7 +18,8 @@ export default {
     `,
     props: ['emails'],
     mounted(){
-console.log('in the mounted',this.emails)
+
+
     },
     data(){
         return{
@@ -26,8 +27,8 @@ console.log('in the mounted',this.emails)
         }
     },
     created(){
-console.log('created in the list')
-console.log('emails',this.emails)
+// console.log('created in the list')
+// console.log('emails',this.emails)
 
     },
     computed:{

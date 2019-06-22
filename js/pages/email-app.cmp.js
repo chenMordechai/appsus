@@ -16,27 +16,31 @@ export default {
        <nav-side> </nav-side>
 </div>
        <div class="emailApp-container">
-       <email-filter @filtered="setFilter" @sorted="setSort"></email-filter>
+       <email-filter@filtered="setFilter" @sorted="setSort"></email-filter>
        <email-list :emails="emailsToShow"></email-list>
        </div>
-
-        </section>
-    `,
-
+       
+       </section>
+       `,
+    //    @favorite="showFavor"     
+    //    <button v-on:click="showFavor">in the app</button>
     data() {
         return {
             emails: [],
             filter: null,
             sortBy: null,
-            // selectedEmail: ''
+            
 
         }
+    },
+    mounte(){
+        console.log('this.emails',this.emails)
     },
     created() {
         emailService.query()
             .then(emails => {
                 this.emails = emails
-                // console.log(this.emails)
+                // console.log('in the app',this.emails)
             })
 
     },
@@ -59,6 +63,15 @@ export default {
         }
 
     },
+    // showFavor(){
+            
+    //         return this.emails.filter(email =>email.isFavorite === true)
+    // },  
+    //     console.log('this.emails',this.emails)
+    //     let nadav = this.emails.filter(email => email.isFavorite === true)
+    //     console.log('nadav',nadav)
+    //     emailService.showFavorite(onlyFavor)
+    // }
     methods: {
         setFilter(filter) {
             console.log('email App got the filter', filter.title, filter.isRead);
@@ -69,8 +82,14 @@ export default {
             console.log('email app got the sort ', sort)
             this.sortBy = sort
             console.log(this.emails)
+<<<<<<< HEAD
+            emailService.sortEmail(this.emails,sort)
+        },
+       
+=======
             emailService.sortEmail(this.emails, sort)
         }
+>>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
 
 
 

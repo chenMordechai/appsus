@@ -8,7 +8,12 @@ export default {
         <button class="trash" v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
         <button class="envelope" v-bind:class="{'fas fa-envelope-open': isOpen, 'fas fa-envelope': isClose }"
          v-on:click="markAdRead"></button>
+<<<<<<< HEAD
+        <button v-bind:class="{'far fa-star': isEmpty, 'fas fa-star': isFull }" v-on:click="favoriteEmail">
+        </button>
+=======
         <button class="star" v-on:click="favoriteEmail" ><i class="far fa-star"></i></button>
+>>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
         <router-link :to="emailUrl" >
             <li  v-on:click="markAdRead" v-bind:class="{read:email.isRead}" class="single-email">
     <h4>{{email.from}}</h4> 
@@ -26,6 +31,8 @@ data() {
         isClose: !this.email.isRead,
         isOpen: this.email.isRead,
         isRead: this.email.isRead,
+        isFull:this.email.isFavorite,
+        isEmpty:!this.email.isFavorite
     }
 },
 created() {
@@ -59,6 +66,8 @@ computed:{
         // console.log('favorite')
         const emailId =this.email.id
         emailService.faviriteEmail(emailId)
+        this.isFull = !this.isFull
+        this.isEmpty = !this.isEmpty
         console.log('this.email-in the preview',this.email)
     },
     deleteEmail(){

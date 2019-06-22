@@ -15,8 +15,10 @@ export default {
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
+                        
                      </select>
-                     <select v-model="sortBy" @change="emitSort($event)"  >
+                     <select v-model="sortBy" @change="emitSort($event)" >
+                   
         <option>Sort By</option>
                          <option>Title</option>
                          <option>Date</option>
@@ -40,18 +42,26 @@ export default {
             console.log('togle')
             this.openNav=! this.openNav
         },
+<<<<<<< HEAD
+        emitFilter(event) {
+            this.filterBy.isRead = event.target.value
+            console.log('this.filterBy',this.filterBy)
+            console.log(' event.target.value', event.target.value)
+=======
         emitFilter() {
            
             console.log('emit filter by', this.filterBy)
+>>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
             this.$emit('filtered', this.filterBy);
 
         },
         emitSort(event) {
             this.sortBy = event.target.value
-            console.log(this.sortBy)
+            console.log('this.soryBt',this.sortBy)
             this.$emit('sorted', this.sortBy);
 
-        }
+        },
+       
     },
 
     computed: {

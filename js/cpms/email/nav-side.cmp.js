@@ -7,14 +7,9 @@ export default {
     name: 'navSide',
     template: `
          <nav class= "nav" > 
-<<<<<<< HEAD
        
-         <email-status> </email-status>
-         <email-compose> </email-compose>
-=======
              <email-compose> </email-compose>
-             <email-status> </email-status>
->>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
+         <email-status> </email-status>
          </nav>
     `,
     data() {

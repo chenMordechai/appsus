@@ -46,6 +46,7 @@ export default {
     },
     computed: {
 
+
         emailsToShow() {
             if (!this.filter) return this.emails;
             else if (this.filter.isRead === 'Read') {
@@ -78,12 +79,17 @@ export default {
         },
 
         setSort(sort) {
-            console.log('email app got the sort ',sort) 
+            console.log('email app got the sort ', sort)
             this.sortBy = sort
             console.log(this.emails)
+<<<<<<< HEAD
             emailService.sortEmail(this.emails,sort)
         },
        
+=======
+            emailService.sortEmail(this.emails, sort)
+        }
+>>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
 
 
 

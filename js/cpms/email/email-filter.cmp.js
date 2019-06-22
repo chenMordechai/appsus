@@ -11,7 +11,7 @@ export default {
             <div class="btn-filter-container">
  <button class="menu-btn" v-on:click="toggleMenu">☰</button>
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
-        <select v-model="filterBy.isRead" @change="emitFilter($event)"  >
+        <select v-model="filterBy.isRead" @change="emitFilter"  >
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
@@ -42,10 +42,16 @@ export default {
             console.log('togle')
             this.openNav=! this.openNav
         },
+<<<<<<< HEAD
         emitFilter(event) {
             this.filterBy.isRead = event.target.value
             console.log('this.filterBy',this.filterBy)
             console.log(' event.target.value', event.target.value)
+=======
+        emitFilter() {
+           
+            console.log('emit filter by', this.filterBy)
+>>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
             this.$emit('filtered', this.filterBy);
 
         },

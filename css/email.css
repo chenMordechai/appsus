@@ -3,37 +3,71 @@
 }
 
 .nav-side {
-    background-color: lightsalmon;
+
+    background-color: rgb(119,136,153);
     min-width: 200px;
     height: 700px;
     max-width: 200px;
 }
     /* position: absolute; */
+.nav{
+    /* margin-top:10px; */
+    
+}
+.status-container{
+    text-align: center
+}
+
+.compose-container{
+    text-align: center;
+    margin: 10px;
+    
+}
+.compose-container button{
+    height: 50px;
+    width: 100px;
+    border-radius: 30px
+}
 
 
 .emailApp-container {
-    background-color: lemonchiffon;
-    width: 80%;
+    /* height: 600px; */
+    /* padding: 30px; */
+    /* border: 1px solid #5b5388; */
+    width:100%;
+}
+.emailDetails-container {
+    /* height: 600px; */
+    padding: 30px;
+    /* border: 1px solid #5b5388; */
+    width: 100%;
 }
 
 button {
     height: 30px;
     background: white;
     border-radius: 4px;
-    border: 1px solid rgb(200, 196, 196);
+    border: 1px solid rgb(218, 214, 214); 
     min-width: 30px;
+    color: rgb(115, 126, 119);
+    padding: 5px;
+
+}
+button.trash{
+color: gray
 }
 
+button.star{
+    color: yellow;
+}
+
+button.envelope{
+    color: red;
+}
 button:hover {
 cursor: pointer;
 }
 
-.emailDetails-container {
-    height: 600px;
-    padding: 30px;
-    border: 1px solid grey;
-    width: 80%;
-}
 
 .emailDetails-container h2 {
     font-size: 2rem;
@@ -74,9 +108,10 @@ cursor: pointer;
     width: 90%;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(201, 195, 195); 
+    border: 1px solid rgb(218, 214, 214); 
+    border-radius: 10px;
     padding: 10px;
-    height: 30px;
+    height: 20px;
     color: black;
 }
 
@@ -112,17 +147,21 @@ a{
 }
 .email-filter-container{
     height: 70px;
-    background-color: grey;
+    background-color:rgb(119,136,153);
     display: flex;
     align-items: center;
     justify-content: center
 }
-.email-filter-container select,input,button{
+.email-filter-container select,input,button {
  height: 30px;
- border: 1px solid rgb(179, 174, 174);
+ border: 1px solid rgb(218, 214, 214); 
  margin:5px;
  border-radius: 4px;
 }
+.email-filter-container input{
+    width: 300px;
+}
+
 
 
 

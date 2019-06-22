@@ -41,7 +41,7 @@ computed:{
     
 
     textToShow() {
-        return this.email.txt.substring(0, 60)
+        return this.email.txt.substring(0, 50)
     },
    
 },methods:{

@@ -6,10 +6,11 @@ export default {
     template: `
     <section class="email-preview-container">
         <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
-        <button ><i class="fas fa-envelope"></i></button>
+        <button  v-bind:class="{'fas fa-envelope-open': isOpen, 'fas fa-envelope': isClose }"
+         v-on:click="markAdRead"></button>
         <button v-on:click="favoriteEmail" ><i class="far fa-star"></i></button>
         <router-link :to="emailUrl" >
-            <li class="single-email">
+            <li  v-on:click="markAdRead" v-bind:class="{read:email.isRead}" class="single-email">
     <h4>{{email.from}}</h4> 
     <p> {{email.title}} <span> {{textToShow}}</span></p>    
   
@@ -18,39 +19,27 @@ export default {
     </router-link>
     </section>
     `,
-    // v-bind:class="{readClass}"
-    // v-bind:class="{'read':isMark}"
+    
     props: ['email'],
 data() {
     return {
-       
+        isClose: !this.email.isRead,
+        isOpen: this.email.isRead,
+        isRead: this.email.isRead,
     }
 },
 created() {
-    // console.log('created')
+    
+    },
    
-},
+
 
 computed:{
     emailUrl() {
-        
         return '/email/' + this.email.id
     },
-        // readClass() {
-        //     if(this.email.isRead===true){
-        //         console.log('read')
-        //         return 'read'
-        //     }
-        //     else {
-        //         console.log('unRead')
-        //         return 'unread'
-        //     }
-
-           
-            // if (isRead) return 'read'
-            // if (isUnread) return 'unread'
-        // },
     
+
     textToShow() {
         return this.email.txt.substring(0, 60)
     },
@@ -65,16 +54,12 @@ computed:{
                   
     },
    
-    // deleteEmail(){
-    //     console.log('deleting')
-    //     const emailId =this.email.id
-    //     console.log('email id = ', emailId)
-    //      emailService.dleateEmail(emailId)
 },methods:{
     favoriteEmail(){
-        console.log('favirite')
+        // console.log('favorite')
         const emailId =this.email.id
         emailService.faviriteEmail(emailId)
+        console.log('this.email-in the preview',this.email)
     },
     deleteEmail(){
         console.log('deleting')
@@ -82,6 +67,16 @@ computed:{
         console.log('email id = ', emailId)
          emailService.dleateEmail(emailId)
         
+     },
+     markAdRead(){
+        //  console.log('mark as read')
+         const emailId =this.email.id
+         emailService.markRead(emailId)
+         this.isOpen = !this.isOpen 
+        //  console.log('this.email',this.email)
+        //  console.log('isOpen',this.isOpen)
+         this.isClose = !this.isClose
+        //  console.log('isClose',this.isClose)         
      }
 },
 

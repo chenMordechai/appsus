@@ -5,8 +5,8 @@ export default {
     template: `
     <section >
         <h1>Email Status</h1>
-        <p>read emails {{coutEmailRead}}%</p>
-        <meter value="0.6">60%</meter>
+        <p>Read emails <b>{{coutEmailRead*100}}%</b></p>
+        <meter v-bind:value="coutEmailRead"></meter>
     </section>
     `
     ,
@@ -22,7 +22,10 @@ export default {
             const readEmail = this.emails.filter(email => { return email.isRead === true })
             let all = this.emails.length
             let read = readEmail.length
-            return (read/all)*100
+            let num = (read/all)
+            let roundNum = parseFloat(Math.round(num * 100) / 100).toFixed(2);
+            
+            return roundNum
         },
 
     },
@@ -34,7 +37,6 @@ export default {
         emailService.query()
             .then(emails => {
                 this.emails = emails
-                // console.log(this.emails)
             })
     },
     components: {

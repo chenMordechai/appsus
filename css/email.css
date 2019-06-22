@@ -188,6 +188,7 @@ a{
     border-radius: 4px;
     border: 1px solid rgb(200, 196, 196);
     min-width: 88px;
+    
 }
 .close-btn{
     bottom: 5px;
@@ -260,4 +261,9 @@ a{
         z-index: 10;
     }
 
+}
+meter{
+    width: 120px;
+    height: 30px;
+    margin-bottom: 35px;
 }

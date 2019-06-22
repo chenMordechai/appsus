@@ -13,7 +13,8 @@ export const emailService = {
     hendleSentEmail,
     createEmail,
     sortEmail,
-    faviriteEmail
+    faviriteEmail,
+    markRead
 
 }
 
@@ -40,15 +41,26 @@ function dleateEmail(emailId) {
     storageService.store(EMAIL_KEY, emailsDB)
 }
 function faviriteEmail(emailId){
-    console.log('faviorite in the service', emailId)
+    // console.log('faviorite in the service', emailId)
     const email = emailsDB.find(email => email.id === emailId);
-    console.log( email.isFavorite)
+    // console.log( email.isFavorite)
     email.isFavorite =!email.isFavorite 
-    console.log( email.isFavorite)
+    console.log('email(in the service)=', email)
     storageService.store(EMAIL_KEY, emailsDB)
 
 }
 
+
+function markRead(emailId){
+console.log('in the service',emailId)
+const email = emailsDB.find(email => email.id === emailId);
+email.isRead =!email.isRead 
+console.log( 'email.isRead',email.isRead)
+storageService.store(EMAIL_KEY, emailsDB)
+
+
+
+}
 function sortByCreated() {
     gTodos.sort(function (a, b) {
         return b.created - a.created;
@@ -102,7 +114,7 @@ function query() {
     // console.log('emailsssss',emailsDB)
     return Promise.resolve(emailsDB);
 }
-
+    
 function hendleSentEmail(title, from, txt) {
     const newEmail = createEmail(title, from, txt)
     console.log('the newEmail is: ', newEmail)
@@ -111,7 +123,6 @@ function hendleSentEmail(title, from, txt) {
     console.log('newEmail', newEmail)
     console.log('i have one more email?', emailsDB)
     storageService.store(EMAIL_KEY, emailsDB)
-    
     
     }
 

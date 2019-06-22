@@ -16,7 +16,7 @@ export default {
 </div>
 <div class="emailDetails-container">
     <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
-                     <button v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
+                     <button v-on:click="deleteEmail"><i     class="fas fa-trash"></i></button>
                 <h2>{{email.title}}</h2>
                 <div class="emailFrom">
               <h3 ><i class="fas fa-user-circle"></i> {{email.from}}</h3>
@@ -42,11 +42,10 @@ export default {
         console.log('params:', this.$route.params.emailId);
         const emaiId = this.$route.params.emailId;
         emailService.getEmailById(emaiId)
-            .then(email => {this.email = email
-              if(this.email) this.email.isRead = true})
+            .then(email => {this.email = email})
               
 
-        },
+            },
         
         mounted(){
          

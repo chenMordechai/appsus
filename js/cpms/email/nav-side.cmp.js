@@ -6,8 +6,8 @@ export default {
     name: 'navSide',
     template: `
          <nav class= "nav" > 
-         <email-status> </email-status>
-         <email-compose> </email-compose>
+             <email-compose> </email-compose>
+             <email-status> </email-status>
          </nav>
     `,
     data() {

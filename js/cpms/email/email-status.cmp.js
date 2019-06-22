@@ -3,9 +3,8 @@ export default {
     name: 'emailStatus',
 
     template: `
-    <section >
-        <h1>Email Status</h1>
-        <p>Read emails <b>{{coutEmailRead*100}}%</b></p>
+    <section class="status-container"  >
+        <!-- <p>Read emails <b>{{coutEmailRead*100}}%</b></p> -->
         <meter v-bind:value="coutEmailRead"></meter>
     </section>
     `

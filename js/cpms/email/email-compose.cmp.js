@@ -1,17 +1,18 @@
-import {emailService} from '../../services/email-service.js'
+import {
+    emailService
+} from '../../services/email-service.js'
 import eventBus from '../../event-bus.js'
 
 export default {
     name: 'emailCompose',
 
     template: `
-    <div>
-    
-    <button v-on:click="openModal">Send Email</button>
+    <div class="compose-container">
+    <button v-on:click="openModal">+compose</button>
     <section  class="modal" v-show="isShown"> 
     <nav class="modal-nav">New Massage
     <form @submit.prevent="saveEmail">
-    <div  class="to-from"><span>To:</span><input ref="to" v-model="sentEmail.from" autofocus  type="text"></div>
+    <div  class="to-from"><span>To:</span><input  ref="to" v-model="sentEmail.from" autofocus  type="text"></div>
     <div class="to-from"><span>Subject:</span><input ref="subject" v-model="sentEmail.title" type="text"></div>
     <textarea class="txtarea" v-model.trim="sentEmail.text"></textarea>
     </form>
@@ -21,11 +22,11 @@ export default {
             </section>
             </div>
             `,
- mounted() {
- // console.log('REFS:', this.$refs);
-  this.$refs.to.focus();
-        
-            },
+    mounted() {
+        // console.log('REFS:', this.$refs);
+        this.$refs.to.focus();
+
+    },
     data() {
         return {
             isShown: false,
@@ -36,16 +37,15 @@ export default {
             },
         }
     },
-    created(){
-        eventBus.$on('reply-email', (emailfrom)=>{
+    created() {
+        eventBus.$on('reply-email', (emailfrom) => {
             this.sentEmail.from = emailfrom
             console.log('event bus working replay-emil')
-            this.isShown=true
-            
+            this.isShown = true
+
         })
     },
-    computed: { 
-    },
+    computed: {},
     methods: {
         openModal() {
             console.log('close')
@@ -57,7 +57,7 @@ export default {
         },
         saveEmail() {
             let title = this.sentEmail.title
-            let from = this.sentEmail.from 
+            let from = this.sentEmail.from
             let text = this.sentEmail.text
             emailService.hendleSentEmail(title, from, text)
             this.isShown = false
@@ -68,6 +68,3 @@ export default {
 
     }
 }
-
-
-

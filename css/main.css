@@ -1,7 +1,8 @@
 header{
     height: 60px;
-    background-color: orange;
+    background-color: rgb(119,136,153);
     text-align: center;
+    color: white;
 }
 
 header nav{

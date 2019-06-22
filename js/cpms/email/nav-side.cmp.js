@@ -1,11 +1,13 @@
 import emailStatus from './email-status.cmp.js'
 import emailCompose from './email-compose.cmp.js'
+import { emailService } from '../../services/email-service.js'
 
 
 export default {
     name: 'navSide',
     template: `
          <nav class= "nav" > 
+       
          <email-status> </email-status>
          <email-compose> </email-compose>
          </nav>
@@ -15,7 +17,14 @@ export default {
 
         }
     },
-    method:{
+    created() {
+        emailService.query()
+            .then(emails => {
+                this.emails = emails
+            })
+    },
+    methods:{
+      
         
 
     },

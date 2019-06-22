@@ -14,7 +14,8 @@ export const emailService = {
     createEmail,
     sortEmail,
     faviriteEmail,
-    markRead
+    markRead,
+    showFavorite
 
 }
 
@@ -126,6 +127,12 @@ function hendleSentEmail(title, from, txt) {
     
     }
 
+    function showFavorite(){
+        console.log('in the service')
+        // console.log('this.emails',this.emails)
+        // return this.emails.filter(email =>email.isFavorite === true)
+        storageService.store(EMAIL_KEY, emailsDB)
+    }
 
     function createEmail(title = 'My dear friend', from = 'anonymos', txt = 'hello friend') {
         return {

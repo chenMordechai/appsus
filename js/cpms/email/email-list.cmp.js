@@ -6,7 +6,7 @@ import {
 export default {
     template: `
     <section>
-    <button v-on:click="showEmails"></button>
+    
     <ul  class="email-list">
         <email-preview
      
@@ -43,14 +43,7 @@ export default {
     },
 
 methods:{
-    showEmails(){
-        this.emails.map(email=>{
-            email.isRead === true
-        })
-        console.log('in the function')
-        console.log('this.emails = ',this.emails)
     
-    },
   
 },
 computed:{

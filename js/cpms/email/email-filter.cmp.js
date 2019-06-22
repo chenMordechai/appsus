@@ -15,8 +15,10 @@ export default {
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
+                        
                      </select>
-                     <select v-model="sortBy" @change="emitSort($event)"  >
+                     <select v-model="sortBy" @change="emitSort($event)" >
+                   
         <option>Sort By</option>
                          <option>Title</option>
                          <option>Date</option>
@@ -42,16 +44,18 @@ export default {
         },
         emitFilter(event) {
             this.filterBy.isRead = event.target.value
-            console.log(this.filterBy)
+            console.log('this.filterBy',this.filterBy)
+            console.log(' event.target.value', event.target.value)
             this.$emit('filtered', this.filterBy);
 
         },
         emitSort(event) {
             this.sortBy = event.target.value
-            console.log(this.sortBy)
+            console.log('this.soryBt',this.sortBy)
             this.$emit('sorted', this.sortBy);
 
-        }
+        },
+       
     },
 
     computed: {

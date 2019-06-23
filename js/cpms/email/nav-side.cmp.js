@@ -11,15 +11,6 @@ export default {
          <nav class= "nav" > 
        
              <email-compose> </email-compose>
-<<<<<<< HEAD
-         <email-status> </email-status>
-          <h2 v-on:click="openInbox"><i class="fas fa-inbox"></i> inbox </h2>
-         <h2 v-on:click="openFavirit" > <i class="fas fa-star"></i> favirite</h2>
-         <h2 v-on:click="openRead" > <i class="fas fa-envelope-open"></i> read </h2>
-         <h2 v-on:click="openUnRead" > <i class="fas fa-envelope-open"></i> unread </h2>
-         <h2 v-on:click="openDeleted" > <i class="fas fa-trash"></i> recantly deleted </h2>
-
-=======
              <h2 v-on:click="openInbox"><i class="fas fa-inbox"></i> inbox </h2>
              <h2 v-on:click="openFavirit" > <i class="fas fa-star"></i> favirite</h2>
              <h2 v-on:click="openRead" > <i class="fas fa-envelope-open"></i> read </h2>
@@ -27,7 +18,6 @@ export default {
              <h2 v-on:click="openDeleted" > <i class="fas fa-trash"></i> recantly deleted </h2>
              <email-status> </email-status>
              
->>>>>>> f237de1fb24e92e9b0ed5f98b2e93e07b69fdb14
          </nav>
     `,
     data() {

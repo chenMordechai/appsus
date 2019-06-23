@@ -5,7 +5,8 @@ import noteService from '../services/note-service.js'
 export default {
     name: 'notes',
     template: `
-    <section >
+    <section class="notes-container">
+    
     <div v-for="note in notes">
         <component :is="note.type" v-bind:key="note.id"  :info="note.info" @setVal="setVal" >  </component>
         </div>

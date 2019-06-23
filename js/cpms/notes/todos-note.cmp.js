@@ -17,6 +17,8 @@ export default {
        <!-- {{info}} -->
        <button><i class="fas fa-thumbtack"></i></button>
        <button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>
+       <button v-on:click="saveNote"><i class="fas fa-plus"></i></button>
+
        <br>
       <input type='text' v-model="txt" @change="reportVal" >
       <button v-on:click="saveTodo"> save</button>
@@ -24,7 +26,7 @@ export default {
       <div class="todo-container" v-for="(todo,idx) in todos">
     <button v-on:click ="deleteTodo(idx)"> X</button> 
     <button v-on:click ="doneTodo(idx)"> V</button> 
-    <p v-bind:class="{'isDone': todos[idx].isDone, 'isntDone': !todos[idx].isDone }"> {{todo.txt}} </p>
+    <p v-bind:class="{'isDone': todos[idx].isDone, 'isntDone': !todos[idx].isDone }"> {{todo.txt}}  </p>
 </div>
 
        </label>
@@ -33,9 +35,8 @@ export default {
     props: ['info'],
     data() {
         return {
-            id: utilService.makeId(),
             txt: '',
-            todos: [],
+            todos: this.info.todos,
             isDone: false,
             // creatAt: getTime() ,
         }
@@ -45,12 +46,12 @@ export default {
             this.$emit('setVal', this.txt)
         },
         saveTodo() {
-            this.todos.push({
+            this.todos.unshift({
                 txt: this.txt,
                 isDone: false
             })
             console.log('saving', this.todos)
-            this.txt =''
+            this.txt = ''
 
         },
         deleteTodo(idx) {
@@ -64,19 +65,22 @@ export default {
 
         },
         deleteNote() {
-           const id = this.info.id
-           noteService.deleteNote(id)
+            const id = this.info.id
+            noteService.deleteNote(id)
+        },
+        saveNote() {
+            console.log('saving note')
+            var note = {
+                type: 'todos',
+                info: {
+                    id: utilService.makeId(),
+                    label: 'i am label of todos',
+                    todos: this.todos,
+                    editor: [],
+                }
+            }
+            noteService.saveNote(note)
         }
-    },
-    computed: {
-
-
-    },
-
-    created() {
-
-    },
-    components: {
-
-    },
+       
+    }
 }

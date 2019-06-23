@@ -1,7 +1,8 @@
 .todos-container{
     background-color: red;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    margin: 15px;
 }
 
 .isDone{
@@ -9,4 +10,16 @@
 }
 .todo-container{
     display: flex;
+
+}
+.img-container{
+    background-color: rgb(79, 45, 216);
+    height: 300px;
+    width: 300px;
+    margin: 15px;
+
+}
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
 }

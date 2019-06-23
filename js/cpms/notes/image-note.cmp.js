@@ -2,7 +2,7 @@ export default {
     name: 'imgNotes',
 
     template: `
-    <section   >
+    <section   class ="img-container" >
        <label>
        <h1>Image</h1>
        {{info.label}}

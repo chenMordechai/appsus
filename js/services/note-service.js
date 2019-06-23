@@ -9,14 +9,15 @@ import {
 
 export default {
     query,
-    deleteNote
+    deleteNote,
+    saveTxt
 }
 
 const NOTES_KEY = "notes"
 
 function query() {
     var notes = storageService.load(NOTES_KEY)
-    if(!notes){
+    if (!notes) {
         notes = notesDB
         storageService.store(NOTES_KEY, notes)
 
@@ -25,18 +26,27 @@ function query() {
     return Promise.resolve(notes)
 }
 
-function deleteNote(id){
-    var idx = notesDB.findIndex(note => note.id ===id)
-    notesDB.splice(idx,1)
+function saveTxt(note) {
+    notesDB.push(note)
+    storageService.store(NOTES_KEY, notesDB)
+    console.log('notesDB',notesDB)
+    console.log('in the service')
+    console.log('this.note=',note)
+
+}
+
+function deleteNote(id) {
+    var idx = notesDB.findIndex(note => note.id === id)
+    notesDB.splice(idx, 1)
     console.log(notesDB)
 }
 let notesDB = [
     {
         type: 'txt',
         info: {
-            txtVal:'i am a text note',
-            colorVal:'#"#ffff00"',
-            isDone:false,
+            txtVal: 'i am a text note',
+            colorVal: '#"#ffff00"',
+            isDone: false,
 
         }
     },
@@ -49,13 +59,13 @@ let notesDB = [
         }
     },
     {
-       
+
         type: 'todos',
         info: {
-            id:utilService.makeId() ,
+            id: utilService.makeId(),
             label: 'i am label of todos',
-            todos:[ ],
-            editor:[ ]
+            todos: [],
+            editor: []
         }
     }
 ]

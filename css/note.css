@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 .txt-note{
     height:200px;
     width:200px;
     background-color: yellow;
-
-=======
+}
 .todos-container{
     background-color: red;
     height: 400px;
@@ -16,5 +14,4 @@
 }
 .todo-container{
     display: flex;
->>>>>>> 9d6ad8ab56de3a5ff0086c5996bb6e88d0ab828b
 }

@@ -1,4 +1,6 @@
-
+import
+noteService
+    from '../../services/note-service.js'
 export default {
     name: 'txtNotes',
 
@@ -7,49 +9,60 @@ export default {
        <label>
        <h1>txt</h1>
       
-       <div class="txt-note">
-       <input type='text' v-model="txtVal" @click="reportVal" placeholder="typeHere" autofocus></input>
-       <input type='color' v-model="colorVal" @change="reportVal">pickColor</input>
-    <p>{{txtVal}}</p>
+       <div  v-bind:style=" note.info" class="txt-note">
+       <input type='text' v-model="note.info.txtVal" @click="reportVal" placeholder="typeHere" autofocus></input>
+       <input type='color' v-model="note.info.background-color" @change="reportVal">BCG</input><br>
+       <input type='color' v-model="note.info.color" @change="reportVal">TXT</input>
+    <p>{{note.info.txtVal}}</p>
     <button v-on:click="saveNote">Save</button>
     </div>
 </label>
 </section>
 `,
-props:['info'],
-data() {
-    // <button v-on:click="saveTxt">Save</button>
-    return{
-       
-            txtVal:'',
-            colorVal:"#ffff00",
-            isDone:false,
+    props: ['info'],
+    data() {
+        // <button v-on:click="saveTxt">Save</button>
+        return {
             
+            note: {
+                type: 'txt',
+                info: {
+                    txtVal: '',
+                    isDone: false,
+                    color: '',
+                    'background-color':'',
+                    
+                },
+                
+            }
 
-        
-    }
+
+
+        }
     },
     methods: {
-        saveNote(){
-           {console.log(this)}
+        saveNote() {
+            // console.log('this.note',this.note)
+            noteService.saveTxt(this.note)
+
         },
-        reportVal(){
+        reportVal() {
             // console.log('this.val = ',this.val)
-            this.$emit('setVal',this)
+            this.$emit('setVal', this)
         },
     },
     computed: {
-      
+
 
     },
 
-mounted(){
-    console.log('')
-},
+    mounted() {
+        console.log('')
+    },
 
-    
+
     created() {
-     
+
     },
     components: {
 

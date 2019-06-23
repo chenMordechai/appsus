@@ -13,12 +13,12 @@ export default {
     template: `
        <section class="email-page-comtainer">
            <div class="nav-side">
-       <nav-side @open-deleted="setDeleted" @open-inbox="setInbox" @open-favorit="setFavor" @open-unread="setUnRead" @open-read="setRead"> </nav-side>
-</div>
-       <div class="emailApp-container">
-       <email-filter @filtered="setFilter" @sorted="setSort"></email-filter>
-       <email-list :emails="emailsToShow"></email-list>
-       </div>
+                <nav-side @open-deleted="setDeleted" @open-inbox="setInbox" @open-favorit="setFavor" @open-unread="setUnRead" @open-read="setRead"> </nav-side>
+            </div>
+            <div class="emailApp-container">
+            <email-filter @filtered="setFilter" @sorted="setSort"></email-filter>
+            <email-list :emails="emailsToShow"></email-list>
+        </div>
        
        </section>
        `,
@@ -44,6 +44,7 @@ export default {
         emailService.query()
             .then(emails => {
                 this.emails = emails
+                // console.log('emails',emails)
                 // console.log('in the app',this.emails)
             })
             emailService.getDeleted()
@@ -54,10 +55,9 @@ export default {
 
     },
     computed: {
-
-
         emailsToShow() {
-            console.log('favorit!')
+            console.log('IN COMPUTED!')
+            console.log(this.emails)
             if (this.inbox) {
                 if(this.filter){
                     return this.emails.filter(email => email.title.includes(this.filter.title) )

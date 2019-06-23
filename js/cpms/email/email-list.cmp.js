@@ -20,8 +20,8 @@ export default {
     props: ['emails'],
     mounted() {
 
-        console.log('in the mounted')
-        console.log('emails = ', this.emails)
+        // console.log('in the mounted')
+        // console.log('emails = ', this.emails)
 
     },
 

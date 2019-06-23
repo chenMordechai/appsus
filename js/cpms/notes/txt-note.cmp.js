@@ -6,21 +6,36 @@ export default {
     <section   >
        <label>
        <h1>txt</h1>
-       {{info.label}}
-       <input type='text' v-model="val" @change="reportVal"></input>
-       
-       </label>
-    </section>
-    `,
-    props:['info'],
-    data() {
+      
+       <div class="txt-note">
+       <input type='text' v-model="txtVal" @click="reportVal" placeholder="typeHere" autofocus></input>
+       <input type='color' v-model="colorVal" @change="reportVal">pickColor</input>
+    <p>{{txtVal}}</p>
+    <button v-on:click="saveNote">Save</button>
+    </div>
+</label>
+</section>
+`,
+props:['info'],
+data() {
+    // <button v-on:click="saveTxt">Save</button>
     return{
-        val:'',
+       
+            txtVal:'',
+            colorVal:"#ffff00",
+            isDone:false,
+            
+
+        
     }
     },
     methods: {
+        saveNote(){
+           {console.log(this)}
+        },
         reportVal(){
-            this.$emit('setVal',this.val)
+            // console.log('this.val = ',this.val)
+            this.$emit('setVal',this)
         },
     },
     computed: {

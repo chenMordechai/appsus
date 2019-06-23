@@ -31,7 +31,11 @@ export default {
     },
     methods:{
         setVal(val){
-console.log(val)
+            console.log()
+            console.log('save in the notes')
+this.notes.push(val)
+console.log('this.notes',this.notes)
+
         }
     },
 

@@ -43,6 +43,7 @@ function saveNote(note) {
 let notesDB = [{
         type: 'txt',
         info: {
+            isPint:true,
             txtVal:'i am a text note',
             colorVal:'#"#ffff00"',
             isDone:false,
@@ -52,6 +53,7 @@ let notesDB = [{
     {
         type: 'imag',
         info: {
+            isPint:false,
             label: 'i am label of txt',
             opts: ['a', 'b', 'c']
 
@@ -61,20 +63,13 @@ let notesDB = [{
 
         type: 'todos',
         info: {
+            isPint:false,
             id: utilService.makeId(),
             label: 'i am label of todos',
             todos: [ {txt:'fiuref',isDone:false}, {txt:'fiuref',isDone:false},{txt:'fiuref',isDone:false}],
             editor: []
         }
     },
-    {
-
-        type: 'todos',
-        info: {
-            id: utilService.makeId(),
-            label: 'i am label of todos',
-            todos: [ {txt:'fiuref',isDone:false}, {txt:'fiuref',isDone:false},{txt:'fiuref',isDone:false}],
-            editor: []
-        }
-    }
+    
+    
 ]

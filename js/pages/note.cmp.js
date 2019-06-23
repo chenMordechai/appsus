@@ -1,48 +1,58 @@
-import txt from '../cpms/notes/txt-note.cmp.js' 
-import imag from '../cpms/notes/image-note.cmp.js' 
-import todos from '../cpms/notes/todos-note.cmp.js' 
+import listNote from '../cpms/notes/list-note.cmp.js'
+import editor from '../cpms/notes/editor.cmp.js'
+
 import noteService from '../services/note-service.js'
 export default {
     name: 'notes',
     template: `
-    <section class="notes-container">
+    <section >
     
-    <div v-for="note in notes">
-        <component :is="note.type" v-bind:key="note.id"  :info="note.info" @setVal="setVal" >  </component>
-        </div>
+<editor></editor>
+
+    <listNote :notes="pintNotesToShow" ></listNote>
+     ---------------------------------------------------------------------------------------
+    <listNote :notes="unPintNotesToShow"></listNote>
+
     </section>
  
     `,
     data() {
-        return{   
-            notes:null
+        return {
+            notes: []
         }
     },
-    mounted(){
-        // this.note = noteService.getNoteById
-        // console.log(this.note)
-        
+    computed: {
+        pintNotesToShow() {
+            console.log('gggggggggggggggggggg', this.notes)
+            return this.notes.filter(note => {
+                return note.info.isPint
+            })
+        },
+        unPintNotesToShow() {
+            console.log('gggggggggggggggggggg', this.notes)
+            return this.notes.filter(note => {
+                return !(note.info.isPint)
+            })
+        }
     },
-    created(){
+    mounted() {
+
+
+    },
+    created() {
         noteService.query()
-        .then(notes=>{
-            this.notes = notes
-            console.log('this.note',this.notes)
-        })
+            .then(notes => {
+                this.notes = notes
+                console.log('this.note', this.notes)
+            })
     },
-    methods:{
-        setVal(val){
-            console.log()
-            console.log('save in the notes')
-this.notes.push(val)
-console.log('this.notes',this.notes)
+    methods: {
 
-        }
+
     },
 
-components:{
-    txt,
-    imag,
-    todos
-},
+    components: {
+        listNote,
+        editor
+    },
 }

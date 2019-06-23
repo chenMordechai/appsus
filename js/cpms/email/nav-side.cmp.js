@@ -9,10 +9,6 @@ export default {
     name: 'navSide',
     template: `
          <nav class= "nav" > 
-<<<<<<< HEAD
-             <email-compose> </email-compose>
-             <email-status> </email-status>
-=======
        
              <email-compose> </email-compose>
          <email-status> </email-status>
@@ -22,7 +18,6 @@ export default {
          <h2 v-on:click="openUnRead" > <i class="fas fa-envelope-open"></i> unread </h2>
          <h2 v-on:click="openDeleted" > <i class="fas fa-trash"></i> recantly deleted </h2>
 
->>>>>>> eb701e79f4ef72cb58047f84ba96dbcebc93dbd2
          </nav>
     `,
     data() {

@@ -9,11 +9,48 @@ header{
     text-align: center;
     color: white;
 }
-
+.headers{ 
+    visibility: hidden; 
+    background-color: aliceblue;
+ }
+ 
 header nav{
     padding-top: 20px;
 }
+ul.ham-btn{
+    /* background-color: beige; */
+    position: absolute;
+   top: 0px;
+   list-style-type: none;
+  
+}
 
+a.em{
+   position: absolute;
+   top: 4px;
+   left: 100px;
+   color:black;
+   /* width:40px; */
+   background-color: aliceblue;
+}
+a.ho{
+ 
+   position: absolute;
+   top: 20px;
+   left: 100px;
+   color:black;
+   background-color: aliceblue;
+
+}
+a.no{
+  
+   position: absolute;
+   top: 36px;
+   left: 100px;
+   color:black;
+   background-color: aliceblue;
+
+}
 .home {
     background-image: url('../img/background.jpg');
     background-size: cover;
@@ -30,7 +67,15 @@ header nav{
     
    
 }
+<<<<<<< HEAD
 /* section.home{
+=======
+.option{
+    /* background-color: aliceblue; */
+
+}
+/* body home{
+>>>>>>> f237de1fb24e92e9b0ed5f98b2e93e07b69fdb14
     font-family: lobster;
 } */
 

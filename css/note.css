@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+.txt-note{
+    height:200px;
+    width:200px;
+    background-color: yellow;
+
+=======
 .todos-container{
     background-color: red;
     height: 300px;
@@ -10,6 +17,7 @@
 }
 .todo-container{
     display: flex;
+<<<<<<< HEAD
 
 }
 .img-container{
@@ -22,4 +30,7 @@
 .notes-container{
     display: flex;
     flex-wrap: wrap;
+=======
+>>>>>>> 9d6ad8ab56de3a5ff0086c5996bb6e88d0ab828b
+>>>>>>> 18186d9193958828008044cb74f795388ee315c2
 }

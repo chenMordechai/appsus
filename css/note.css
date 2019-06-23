@@ -1,12 +1,21 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 .txt-note{
-    height:200px;
-    width:200px;
+    height:300px;
+    width:300px;
     background-color: yellow;
+<<<<<<< HEAD
+=======
+
+>>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 }
 .todos-container{
     background-color: red;
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    margin: 15px;
 }
 
 .isDone{
@@ -14,4 +23,25 @@
 }
 .todo-container{
     display: flex;
+<<<<<<< HEAD
+=======
+
+
+}
+.img-container{
+    background-color: rgb(79, 45, 216);
+    height: 300px;
+    width: 300px;
+    margin: 15px;
+
+}
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.img-note{
+    width: 100%;
+>>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 }

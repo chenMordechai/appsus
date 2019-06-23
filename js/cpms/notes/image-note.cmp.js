@@ -2,38 +2,35 @@ export default {
     name: 'imgNotes',
 
     template: `
-    <section   >
+    <section   class ="img-container" >
        <label>
        <h1>Image</h1>
-       {{info.label}}
-       <input type='text' v-model="val" @change="reportVal"></input>
-       
-       </label>
+       <button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>
+       <button v-on:click="saveNote"><i class="fas fa-plus"></i></button>
+       <br>
+       url:
+       <input type='text' v-model="url" @change="reportVal">
+       <button v-on:click="saveImg"> save</button>
+       <img class="img-note" v-bind:src="img">
+    </label>
     </section>
     `,
-    props:['info'],
+    props: ['info'],
     data() {
-    return{
-        val:'',
-    }
+        return {
+            url: '',
+            img: ''
+        }
     },
     methods: {
-        reportVal(){
-            this.$emit('setVal',this.val)
+        reportVal() {
+            this.$emit('setVal', this.val)
         },
-    },
-    computed: {
-      
+        saveImg() {
+            console.log(this.url)
+            this.img = this.url
 
-    },
-
-
-
-    
-    created() {
-     
-    },
-    components: {
+        },
 
     }
 }

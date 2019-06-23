@@ -43,8 +43,9 @@ function saveNote(note) {
 let notesDB = [{
         type: 'txt',
         info: {
-            label: 'i am label of txt',
-            opts: ['a', 'b', 'c']
+            txtVal:'i am a text note',
+            colorVal:'#"#ffff00"',
+            isDone:false,
 
         }
     },

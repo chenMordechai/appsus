@@ -10,11 +10,8 @@ import {
 export default {
     query,
     deleteNote,
-<<<<<<< HEAD
-    saveTxt
-=======
+    saveTxt,
     saveNote
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 }
 
 const NOTES_KEY = "notes"
@@ -30,7 +27,6 @@ function query() {
     return Promise.resolve(notes)
 }
 
-<<<<<<< HEAD
 function saveTxt(note) {
     notesDB.push(note)
     storageService.store(NOTES_KEY, notesDB)
@@ -40,8 +36,6 @@ function saveTxt(note) {
 
 }
 
-=======
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 function deleteNote(id) {
     var idx = notesDB.findIndex(note => note.id === id)
     notesDB.splice(idx, 1)
@@ -79,11 +73,7 @@ let notesDB = [{
         info: {
             id: utilService.makeId(),
             label: 'i am label of todos',
-<<<<<<< HEAD
-            todos: [],
-=======
             todos: [ {txt:'fiuref',isDone:false}, {txt:'fiuref',isDone:false},{txt:'fiuref',isDone:false}],
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
             editor: []
         }
     },

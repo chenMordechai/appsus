@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 .txt-note{
     height:300px;
     width:300px;
     background-color: yellow;
-<<<<<<< HEAD
-=======
 
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 }
 .todos-container{
     background-color: red;
@@ -23,8 +17,6 @@
 }
 .todo-container{
     display: flex;
-<<<<<<< HEAD
-=======
 
 
 }
@@ -43,5 +35,4 @@
 
 .img-note{
     width: 100%;
->>>>>>> efc7b3dcb77be12994dd53948a1e362722f7b75a
 }

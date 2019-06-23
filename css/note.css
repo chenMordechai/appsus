@@ -1,0 +1,12 @@
+.todos-container{
+    background-color: red;
+    height: 400px;
+    width: 400px;
+}
+
+.isDone{
+    text-decoration: line-through;
+}
+.todo-container{
+    display: flex;
+}

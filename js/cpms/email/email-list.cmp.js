@@ -1,7 +1,4 @@
 import emailPreview from './email-preview.cmp.js'
-import {
-    emailService
-} from "../../services/email-service.js"
 
 export default {
     template: `

@@ -1,3 +1,8 @@
+
+/* @font-face {
+	font-family: lobster;
+	src: url(../fonts/lobster/Lobster-Regular.ttf); */
+
 header{
     height: 60px;
     background-color: rgb(119,136,153);
@@ -8,3 +13,24 @@ header{
 header nav{
     padding-top: 20px;
 }
+
+.home {
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: lobster;
+    text-align:center;
+    font-size: 2.5rem;
+    /* font-family: lobster; */
+    
+   
+}
+/* body home{
+    font-family: lobster;
+} */
+

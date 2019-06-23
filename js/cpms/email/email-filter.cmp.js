@@ -42,16 +42,9 @@ export default {
             console.log('togle')
             this.openNav=! this.openNav
         },
-<<<<<<< HEAD
-        emitFilter(event) {
-            this.filterBy.isRead = event.target.value
-            console.log('this.filterBy',this.filterBy)
-            console.log(' event.target.value', event.target.value)
-=======
         emitFilter() {
            
             console.log('emit filter by', this.filterBy)
->>>>>>> 43e908214dc333b5f97a87bc65185e5187706f25
             this.$emit('filtered', this.filterBy);
 
         },

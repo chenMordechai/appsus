@@ -10,9 +10,39 @@
     max-width: 200px;
 }
     /* position: absolute; */
-.nav{
-    /* margin-top:10px; */
-    
+.headers{ 
+    visibility: hidden; 
+ }
+
+
+ ul.ham-btn{
+     /* background-color: beige; */
+     position: absolute;
+    top: 0px;
+    list-style-type: none;
+   
+}
+
+a.em{
+    position: absolute;
+    top: 4px;
+    left: 100px;
+    color:black;
+    width:10px;
+}
+a.ho{
+  
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    color:black;
+}
+a.no{
+   
+    position: absolute;
+    top: 36px;
+    left: 100px;
+    color:black;
 }
 .status-container{
     text-align: center

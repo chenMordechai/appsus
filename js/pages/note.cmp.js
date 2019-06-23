@@ -10,7 +10,7 @@ export default {
 <editor></editor>
 
     <listNote :notes="pintNotesToShow" ></listNote>
-     ---------------------------------------------------------------------------------------
+  <hr>
     <listNote :notes="unPintNotesToShow"></listNote>
 
     </section>

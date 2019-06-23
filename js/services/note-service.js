@@ -10,6 +10,7 @@ import {
 export default {
     query,
     deleteNote,
+    saveTxt,
     saveNote
 }
 
@@ -24,6 +25,15 @@ function query() {
     }
     console.log('notes', notes)
     return Promise.resolve(notes)
+}
+
+function saveTxt(note) {
+    notesDB.push(note)
+    storageService.store(NOTES_KEY, notesDB)
+    console.log('notesDB',notesDB)
+    console.log('in the service')
+    console.log('this.note=',note)
+
 }
 
 function deleteNote(id) {

@@ -37,16 +37,17 @@ function getEmailById(emailId) {
 }
 
 function dleateEmail(emailId) {
-    console.log('delete in the service', emailId)
+    // console.log('delete in the service', emailId)
     const emailIdx = emailsDB.findIndex(email => email.id === emailId)
     const deletedEmail = emailsDB.find(email => email.id === emailId)
-    console.log(deletedEmail , 'deleted')
-    console.log(recentlyDeleted ,'recently deleted in the function' ) //null ???
+    // console.log(deletedEmail , 'deleted')
+    // console.log(recentlyDeleted ,'recently deleted in the function' ) //null ???
     recentlyDeleted.push(deletedEmail)
     storageService.store('recently-deleted', recentlyDeleted)
-    console.log(emailIdx)
+    // console.log(emailIdx)
     emailsDB.splice(emailIdx, 1)
     storageService.store(EMAIL_KEY, emailsDB)
+    // console.log(emailsDB)
 }
 
 function getDeleted(){

@@ -6,10 +6,12 @@ export default {
                 
                 <nav >
                 <ul class="ham-btn">
+                    <div class="option">
                 <li  v-bind:class="{ headers:isHeaders}"><router-link class="ho"  exact to="/">Home</router-link> </li> 
                 <li  v-bind:class="{ headers:isHeaders}"><router-link class="no"  to="/note">Note</router-link> </li>
-                <button   v-on:click="toggleHeders">☰</button>
                 <li  v-bind:class="{headers:isHeaders}"><router-link class="em"  exact to="/email">Email</router-link></li> 
+</div>
+                <button   v-on:click="toggleHeders">☰</button>
                     <!-- <router-link to="/book">Book</router-link> |
                     <router-link to="/bookAdd">google-Book</router-link>  -->
                     </ul>

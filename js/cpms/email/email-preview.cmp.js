@@ -8,9 +8,14 @@ export default {
         <button class="trash" v-on:click="deleteEmail"><i class="fas fa-trash"></i></button>
         <button class="envelope" v-bind:class="{'fas fa-envelope-open': isOpen, 'fas fa-envelope': isClose }"
          v-on:click="markAdRead"></button>
+<<<<<<< HEAD
         <button v-bind:class="{'far fa-star': isEmpty, 'fas fa-star': isFull }" v-on:click="favoriteEmail">
         </button>
         <button class="star" v-on:click="favoriteEmail" ><i class="far fa-star"></i></button>
+=======
+        <button class="star" v-bind:class="{'far fa-star': isEmpty, 'fas fa-star': isFull }" v-on:click="favoriteEmail">
+        </button>
+>>>>>>> eb701e79f4ef72cb58047f84ba96dbcebc93dbd2
         <router-link :to="emailUrl" >
             <li  v-on:click="markAdRead" v-bind:class="{read:email.isRead}" class="single-email">
     <h4>{{email.from}}</h4> 
@@ -45,7 +50,7 @@ computed:{
     
 
     textToShow() {
-        return this.email.txt.substring(0, 60)
+        return this.email.txt.substring(0, 50)
     },
    
 },methods:{

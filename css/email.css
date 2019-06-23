@@ -3,7 +3,9 @@
 }
 
 .nav-side {
-
+    padding-left:20px;
+    font-size: 0.8rem;
+color: white;
     background-color: rgb(119,136,153);
     min-width: 200px;
     height: 700px;
@@ -135,7 +137,7 @@ cursor: pointer;
 
 .single-email{
     display: flex;
-    width: 90%;
+    /* width: 90%; */
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(218, 214, 214); 
@@ -146,7 +148,7 @@ cursor: pointer;
 }
 
 .single-email>h4{
-    width: 130px;
+    width: 100px;
     text-align: left;
     
 }

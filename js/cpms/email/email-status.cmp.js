@@ -15,7 +15,9 @@ export default {
             read: []
         }
     },
-    method: {},
+    methods: {
+        
+    },
     computed: {
         coutEmailRead() {
             const readEmail = this.emails.filter(email => { return email.isRead === true })

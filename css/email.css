@@ -3,7 +3,9 @@
 }
 
 .nav-side {
-
+    padding-left:20px;
+    font-size: 0.8rem;
+color: white;
     background-color: rgb(119,136,153);
     min-width: 200px;
     height: 700px;

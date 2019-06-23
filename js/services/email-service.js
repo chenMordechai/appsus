@@ -15,53 +15,73 @@ export const emailService = {
     sortEmail,
     faviriteEmail,
     markRead,
-    showFavorite
+    showFavorite,
+    getDeleted
 
 }
 
 const EMAIL_KEY = 'emails';
 
 var emailsDB = [];
+var recentlyDeleted = [];
 
-
+console.log(recentlyDeleted , 'recently deleted')
 
 function getEmailById(emailId) {
     var emailById = query()
-        .then(emails => {
-            const email = emails.find(email => email.id === emailId);
-            return Promise.resolve(email)
-        })
+    .then(emails => {
+        const email = emails.find(email => email.id === emailId);
+        return Promise.resolve(email)
+    })
     return emailById
 }
 
 function dleateEmail(emailId) {
     console.log('delete in the service', emailId)
     const emailIdx = emailsDB.findIndex(email => email.id === emailId)
+    const deletedEmail = emailsDB.find(email => email.id === emailId)
+    console.log(deletedEmail , 'deleted')
+    console.log(recentlyDeleted ,'recently deleted in the function' ) //null ???
+    recentlyDeleted.push(deletedEmail)
+    storageService.store('recently-deleted', recentlyDeleted)
     console.log(emailIdx)
     emailsDB.splice(emailIdx, 1)
     storageService.store(EMAIL_KEY, emailsDB)
 }
-function faviriteEmail(emailId){
+
+function getDeleted(){
+    var deletedEmails = storageService.load('recently-deleted');
+    if(!deletedEmails){
+        deletedEmails =[]
+    }
+    recentlyDeleted = deletedEmails
+    // console.log('emailsssss',emailsDB)
+    return Promise.resolve(recentlyDeleted);
+}
+
+
+function faviriteEmail(emailId) {
     // console.log('faviorite in the service', emailId)
     const email = emailsDB.find(email => email.id === emailId);
     // console.log( email.isFavorite)
-    email.isFavorite =!email.isFavorite 
+    email.isFavorite = !email.isFavorite
     console.log('email(in the service)=', email)
     storageService.store(EMAIL_KEY, emailsDB)
 
 }
 
 
-function markRead(emailId){
-console.log('in the service',emailId)
-const email = emailsDB.find(email => email.id === emailId);
-email.isRead =!email.isRead 
-console.log( 'email.isRead',email.isRead)
-storageService.store(EMAIL_KEY, emailsDB)
+function markRead(emailId) {
+    console.log('in the service', emailId)
+    const email = emailsDB.find(email => email.id === emailId);
+    email.isRead = !email.isRead
+    console.log('email.isRead', email.isRead)
+    storageService.store(EMAIL_KEY, emailsDB)
 
 
 
 }
+
 function sortByCreated() {
     gTodos.sort(function (a, b) {
         return b.created - a.created;
@@ -69,7 +89,7 @@ function sortByCreated() {
 }
 
 
-function sortEmail(emails,sort) {
+function sortEmail(emails, sort) {
     if (sort === 'Title') {
         console.log('in service title')
         emails.sort(function (a, b) {
@@ -85,16 +105,17 @@ function sortEmail(emails,sort) {
         })
     } else {
         console.log('in service title/all')
-          emails.sort(function(a,b){
-            return dateToNum(b.date) -dateToNum(a.date) ;
-          });
+        emails.sort(function (a, b) {
+            return dateToNum(b.date) - dateToNum(a.date);
+        });
     }
 
 }
+
 function dateToNum(d) {
-   var c = d.split('-')
-    return Number(c[2]+c[1]+c[0]);
-  }
+    var c = d.split('-')
+    return Number(c[2] + c[1] + c[0]);
+}
 
 
 //   function saveReview(bookId, bookReview) {
@@ -115,7 +136,7 @@ function query() {
     // console.log('emailsssss',emailsDB)
     return Promise.resolve(emailsDB);
 }
-    
+
 function hendleSentEmail(title, from, txt) {
     const newEmail = createEmail(title, from, txt)
     console.log('the newEmail is: ', newEmail)
@@ -124,33 +145,33 @@ function hendleSentEmail(title, from, txt) {
     console.log('newEmail', newEmail)
     console.log('i have one more email?', emailsDB)
     storageService.store(EMAIL_KEY, emailsDB)
-    
-    }
 
-    function showFavorite(){
-        console.log('in the service')
-        // console.log('this.emails',this.emails)
-        // return this.emails.filter(email =>email.isFavorite === true)
-        storageService.store(EMAIL_KEY, emailsDB)
-    }
+}
 
-    function createEmail(title = 'My dear friend', from = 'anonymos', txt = 'hello friend') {
-        return {
-            id: utilService.makeId(),
-            title: title,
-            txt: txt,
-            from: from,
-            date: utilService.makeDate(),
-            isRead: false,
-            isFavorite: false,
-            isTrash: false
+function showFavorite() {
+    console.log('in the service')
+    // console.log('this.emails',this.emails)
+    // return this.emails.filter(email =>email.isFavorite === true)
+    storageService.store(EMAIL_KEY, emailsDB)
+}
 
-        }
+function createEmail(title = 'My dear friend', from = 'anonymos', txt = 'hello friend') {
+    return {
+        id: utilService.makeId(),
+        title: title,
+        txt: txt,
+        from: from,
+        date: utilService.makeDate(),
+        isRead: false,
+        isFavorite: false,
+        isTrash: false
 
     }
 
+}
 
-  
+
+
 
 
 function generateEmails() {
@@ -160,7 +181,7 @@ function generateEmails() {
             title: 'title',
             txt: utilService.makeLorem(100),
             from: 'from',
-            date:'02-05-2019',
+            date: '02-05-2019',
             isRead: true,
             isFavorite: false,
             isTrash: false

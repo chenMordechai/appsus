@@ -11,12 +11,12 @@ export default {
             <div class="btn-filter-container">
  <button class="menu-btn" v-on:click="toggleMenu">☰</button>
         <input type="text" autofocus placeholder="search" v-model="filterBy.title"  @input="emitFilter"  />
-        <select v-model="filterBy.isRead" @change="emitFilter"  >
+        <!-- <select v-model="filterBy.isRead" @change="emitFilter"  >
         <option>All</option>
                          <option>Read</option>
                          <option>UnRead</option>
                         
-                     </select>
+                     </select> -->
                      <select v-model="sortBy" @change="emitSort($event)" >
                    
         <option>Sort By</option>
@@ -31,7 +31,7 @@ export default {
         return {
             filterBy: {
                 title: '',
-                isRead: 'All',
+                // isRead: 'All',
             },
             sortBy:'Sort By',
             openNav: false,

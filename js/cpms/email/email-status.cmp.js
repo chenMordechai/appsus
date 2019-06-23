@@ -6,7 +6,7 @@ export default {
     <section class="status-container"  >
         <!-- <p>Read emails <b>{{coutEmailRead*100}}%</b></p> -->
         <meter v-bind:value="coutEmailRead"></meter>
-    </section>
+    </section> 
     `
     ,
     data() {

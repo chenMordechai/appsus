@@ -21,39 +21,36 @@ export default {
 </section>
     `,
     props: ['emails'],
-    mounted(){
+    mounted() {
 
-    console.log('in the mounted')
-    console.log('emails = ',this.emails )
+        console.log('in the mounted')
+        console.log('emails = ', this.emails)
 
-},
+    },
 
 
-    data(){
-       
+    data() {
+
         return {
-            
-            
-          }
+
+
+        }
     },
-    created(){
-       
-// console.log('created in the list')
-// console.log('emails',this.emails)
+    created() {
+
+        // console.log('created in the list')
+        // console.log('emails',this.emails)
     },
 
-methods:{
-    
-  
-},
-computed:{
-    
+    methods: {
+
+
     },
-    components:{
+    computed: {
+
+    },
+    components: {
         emailPreview
     },
-    method:{
-       
-        }
-    
+   
 }

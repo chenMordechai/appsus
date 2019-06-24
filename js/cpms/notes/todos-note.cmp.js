@@ -13,13 +13,8 @@ export default {
     template: `
     <section class ="todos-container">
        <label >
-       <h1>todos</h1>
-       <!-- {{info}} -->
-       <!-- <button v-on:click="saveNote"><i class="fas fa-plus"></i></button> -->
-       
-       <br>
-       <input type='text' v-model="txt" @change="reportVal" >
-       <button v-on:click="saveTodo"> add</button>
+       <input type='text' v-model="txt" @change="reportVal" placeholder="todo" >
+       <i v-on:click="saveTodo" class="far fa-plus-square"></i>
        <br>
       <!-- <input type='text' v-model="txt" @change="reportVal" >
       <button v-on:click="saveTodo"> save</button>
@@ -27,9 +22,8 @@ export default {
        <input type='color' v-model="note.info.color" @change="reportVal">TXT</input> -->
       <br>
       <div class="todo-container" v-if="info" v-for="(todo,idx) in todos">
-    <button v-on:click ="deleteTodo(idx)"> X</button> 
-    <button v-on:click ="doneTodo(idx)"> V</button> 
-    <p v-bind:class="{'isDone': todos[idx].isDone, 'isntDone': !todos[idx].isDone }"> {{todo.txt}} </p>
+    <button class="todoisdon" v-on:click ="deleteTodo(idx)"> X</button> 
+    <p  v-on:click ="doneTodo(idx)" v-bind:class="{'isDone': todos[idx].isDone, 'isntDone': !todos[idx].isDone }"> {{todo.txt}} </p>
 </div>
 <button  v-on:click="pintNote"><i class="fas fa-thumbtack"></i></button>
 <button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>

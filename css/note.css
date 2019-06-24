@@ -1,32 +1,53 @@
+body{
+    background-color: rgb(221, 208, 208);
+}
+
 .txt-note{
-    height:300px;
-    width:300px;
-    background-color: yellow;
+    /* height:300px; */
+    width:200px;
+    /* background-color: yellow; */
     margin: 15px;
+    border: 1px solid rgb(42, 50, 58);
+    border-radius: 4px;
+    padding: 5px;
+
 
 
 }
 .todos-container{
-    background-color: red;
-    height: 300px;
+    /* background-color: red; */
+    /* height: 300px; */
     width: 300px;
     margin: 17px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    border: 1px solid  rgb(42, 50, 58);
+    border-radius: 4px;
+    padding: 5px;
 }
 
+.todos-container input{
+    padding: 3px;
+
+}
 .isDone{
     text-decoration: line-through;
 }
 .todo-container{
     display: flex;
+    align-items: center;
 
 
 }
 .img-container{
-    background-color: rgb(79, 45, 216);
-    height: 300px;
+    /* background-color: rgb(79, 45, 216); */
+    /* height: 300px; */
     width: 300px;
     margin: 15px;
+    border: 1px solid  rgb(42, 50, 58);
+    border-radius: 4px;
+padding: 5px;
+    
+
 
 }
 .notes-container{
@@ -37,4 +58,35 @@
 
 .img-note{
     width: 100%;
+}
+.editor-container{
+    margin: 0 auto;
+    text-align: center;
+    height: 70px;
+    margin-top:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editor-container button{
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+}
+.editor-container .far{
+    height: 35px;
+}
+.editor-container input{
+    height: 30px;
+    width: 300px;
+    padding: 5px
+}
+/* .fa-file-alt{
+    color: red;
+    height: 50px;
+} */
+
+.todos-container .todoisdon{
+    background:none;
+    border:none
 }

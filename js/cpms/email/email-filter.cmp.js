@@ -6,7 +6,7 @@ export default {
     template: `
         <section class="email-filter-container">
             <!-- <div class="nav-side-in-mobile"> -->
-            <nav-side class="nav-side-in-mobile" v-if="openNav"></nav-side>
+            <nav-side class="nav-side nav-side-in-mobile" v-if="openNav"></nav-side>
 <!-- </div> -->
             <div class="btn-filter-container">
  <button class="menu-btn" v-on:click="toggleMenu">☰</button>

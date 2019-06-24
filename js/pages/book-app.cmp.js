@@ -39,6 +39,9 @@ export default {
         booksToShow() {
             console.log('in app', this.filter)
             if (!this.filter) return this.books;
+            else if(this.filter.title){
+                return this.books.filter(book => book.title.includes(this.filter.title)
+                )}
             return this.books.filter(book => book.title.includes(this.filter.title)
             &&  book.listPrice.amount >= this.filter.fromPrice 
             &&  book.listPrice.amount <= this.filter.toPrice )

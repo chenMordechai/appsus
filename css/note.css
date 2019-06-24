@@ -1,16 +1,18 @@
 body{
-    background-color: white;
+    background-color: rgb(247, 241, 241);
     color:black;
 }
 
 .txt-note{
     /* height:300px; */
-    width:200px;
+    /* width:200px; */
     /* background-color: yellow; */
     margin: 15px;
     border: 1px solid rgb(42, 50, 58);
     border-radius: 4px;
     padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 
 
 

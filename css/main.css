@@ -41,6 +41,8 @@ ul.ham-btn {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
+    transform: rotate(360deg);
+    transition: transform 0.7s;
 } 
 
 .grid {
@@ -94,6 +96,7 @@ a.no {
     justify-content: center;
     align-items: center;
     font-size: 100px;
+    flex-wrap: wrap;
    
 
 }

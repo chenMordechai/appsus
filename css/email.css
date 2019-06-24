@@ -68,7 +68,6 @@ border-radius: 0px;
 }
 
 .emailDetails-container {
-    background-color: white;
 
     /* height: 600px; */
     padding: 30px;
@@ -139,7 +138,6 @@ button:hover {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    background-color: white;
     height: 650px;
 
     /* padding-inline-start: 84px; */
@@ -238,7 +236,9 @@ button {
     position: absolute;
     right: 30%;
     border: 3px solid black;
-    bottom:0;
+     /* transform: translate(100%, 0); 
+        transition: transform .6s; */
+    /* bottom:0; */
     /* visibility: hidden; */
 
 
@@ -323,9 +323,9 @@ button {
     display: none;
 }
 
-.nav-side-in-mobile {
+/* .nav-side-in-mobile {
     display: none;
-}
+} */
 
 .btn-filter-container {
     display: flex;
@@ -416,6 +416,7 @@ button {
     }
 
     .nav-side-in-mobile {
+    
         display: block;
         color: white;
         background-color: rgb(172, 174, 177);
@@ -428,6 +429,7 @@ button {
         top: 158px;
         left: -8px;
         margin-left: 8px;
+        z-index: 10;
 
     }
 

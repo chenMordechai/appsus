@@ -30,7 +30,8 @@ export default {
         return {
             type: '',
             txt: '',
-            todos:[]
+            todos:[],
+            placeholderTXt: 'choose note type'
 
 
             // placeholder: 'kjdshf'
@@ -51,16 +52,20 @@ export default {
     methods: {
         openTxtNote() {
             this.type = 'txt'
+            this.placeholderTXt= 'Add a text note'
+            
 
 
             // console.log(this.type)
         },
         openTodosNote() {
             this.type = 'todos'
+            this.placeholderTXt= 'Add a todos note'
             // console.log(this.type)
         },
         openImageNote() {
             this.type = 'imag'
+            this.placeholderTXt= 'Add an image URL'
             // console.log(this.type)
         },
         saveNute() {

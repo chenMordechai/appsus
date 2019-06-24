@@ -15,15 +15,13 @@ export default {
        <label >
        <input type='text' v-model="txt" @change="reportVal" placeholder="todo" >
        <i v-on:click="saveTodo" class="far fa-plus-square"></i>
-       <br>
-      <!-- <input type='text' v-model="txt" @change="reportVal" >
-      <button v-on:click="saveTodo"> save</button>
-      <input type='color' v-model="note.info.background-color" @change="reportVal">BCG</input><br>
-       <input type='color' v-model="note.info.color" @change="reportVal">TXT</input> -->
-      <br>
+
       <div class="todo-container" v-if="info" v-for="(todo,idx) in todos">
+
     <button class="todoisdon" v-on:click ="deleteTodo(idx)"> X</button> 
     <p  v-on:click ="doneTodo(idx)" v-bind:class="{'isDone': todos[idx].isDone, 'isntDone': !todos[idx].isDone }"> {{todo.txt}} </p>
+
+   
 </div>
 <button  v-on:click="pintNote"><i class="fas fa-thumbtack"></i></button>
 <button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>
@@ -74,8 +72,9 @@ export default {
             console.log(idx, this.todos[idx].isDone, 'is done')
 
         },
-        deleteNote() {
+        deleteThisNote() {
            const id = this.info.id
+           console.log('the id is: ',id)
            noteService.deleteNote(id)
         },
         pintNote(){

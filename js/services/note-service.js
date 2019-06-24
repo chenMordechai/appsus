@@ -14,6 +14,7 @@ export default {
     saveNote,
     pintNote
 }
+
 let notesDB = []
 const NOTES_KEY = "notes"
 
@@ -46,6 +47,17 @@ function deleteNote(id) {
         console.log('notes id in service', note.info.id)
         return note.info.id == id
     })
+
+    function setColorForNote(id){
+console.log('in ths service')
+let idx = notesDB.findIndex(note =>{
+    console.log('in ths service', note.info)
+    return note.info.id === id
+
+    
+})
+console.log('in ths notesDB',notesDB)
+    }
 
     console.log(idx)
     notesDB.splice(idx, 1)

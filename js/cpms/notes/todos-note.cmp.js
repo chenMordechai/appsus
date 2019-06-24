@@ -28,6 +28,9 @@ export default {
 </div>
 <button  v-on:click="pintNote"><i class="fas fa-thumbtack"></i></button>
 <button v-on:click="deleteThisNote"><i class="fas fa-trash"></i></button>
+ <!-- <input class="color-picker" type='color' v-model="['background-color']" > -->
+          <input class="color-picker" type='color' v-model="info.color"> 
+
 
 
        </label>
@@ -43,7 +46,7 @@ export default {
             newTodos:[],
             color: '',
             'background-color':'',
-            // creatAt: getTime() ,
+            
         }
     },
     methods: {

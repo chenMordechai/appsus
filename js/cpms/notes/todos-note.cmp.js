@@ -24,7 +24,7 @@ export default {
    
 </div>
 <button  v-on:click="pintNote"><i class="fas fa-thumbtack"></i></button>
-<button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>
+<button v-on:click="deleteThisNote"><i class="fas fa-trash"></i></button>
 
 
        </label>

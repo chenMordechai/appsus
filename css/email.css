@@ -34,6 +34,13 @@
     font-family: cursive;
 
 }
+.compose-container input {
+width: 95%;
+border:none;
+border-bottom: 1px solid black;
+border-radius: 0px;
+}
+
 
 .compose-container button {
     height: 50px;
@@ -42,6 +49,7 @@
     border: 2px solid rgb(100, 96, 96);
     font-family: cursive;
     font-size: 20px;
+    margin: 20px
 
 }
 
@@ -54,6 +62,8 @@
 }
 
 .emailDetails-container {
+    background-color: white;
+
     /* height: 600px; */
     padding: 30px;
     /* border: 1px solid #5b5388; */
@@ -110,9 +120,11 @@ button:hover {
 
 .emailDetails-container p {
     height: 300px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     padding: 10px;
 
+}
+.emailDetails-container button{
 }
 
 .email-list {
@@ -129,7 +141,7 @@ button:hover {
 
 .single-email {
     display: flex;
-    /* width: 90%; */
+    width: 88%;
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(218, 214, 214);
@@ -215,11 +227,11 @@ button {
     background-color: white;
     color: white;
     width: 600px;
-    height: 350px;
+    height: 450px;
     position: absolute;
     right: 30%;
     border: 3px solid black;
-    bottom: 250px;
+    bottom:0;
     /* visibility: hidden; */
 
 
@@ -228,7 +240,7 @@ button {
 .modal-nav {
     background-color: black;
     text-align: center;
-    height: 45px;
+    height: 55px;
     width: 100%;
     position: inherit;
 
@@ -357,7 +369,7 @@ button {
     }
 
     .emailDetails-container {
-        width: 100%
+        width: 100%;
     }
 
     .emailApp-container {

@@ -16,7 +16,7 @@ export default {
                 <li v-on:click="toggleHeders" v-bind:class="{ headers:isHeaders}"><router-link class="no"  to="/note"><i class="fas fa-sticky-note"></i></router-link> </li>
                 <li v-on:click="toggleHeders" v-bind:class="{headers:isHeaders}"><router-link class="em"  exact to="/email"><i class="fas fa-at"></i></router-link></li> 
 
-                <li v-on:click="toggleHeders" v-bind:class="{headers:isHeaders}"><router-link class="em"  exact to="/email"><i class="fas fa-book"></i></router-link></li> 
+                <li v-on:click="toggleHeders" v-bind:class="{headers:isHeaders}"><router-link class="em"  exact to="/book"><i class="fas fa-book"></i></router-link></li> 
 
             </div>
 

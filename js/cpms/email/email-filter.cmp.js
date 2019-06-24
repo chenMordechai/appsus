@@ -33,34 +33,34 @@ export default {
                 title: '',
                 // isRead: 'All',
             },
-            sortBy:'Sort By',
+            sortBy: 'Sort By',
             openNav: false,
         }
     },
     methods: {
         toggleMenu() {
             console.log('togle')
-            this.openNav=! this.openNav
+            this.openNav = !this.openNav
         },
         emitFilter() {
-           
+
             console.log('emit filter by', this.filterBy)
             this.$emit('filtered', this.filterBy);
 
         },
         emitSort(event) {
             this.sortBy = event.target.value
-            console.log('this.soryBt',this.sortBy)
+            console.log('this.soryBt', this.sortBy)
             this.$emit('sorted', this.sortBy);
 
         },
-       
+
     },
 
     computed: {
 
     },
-    components:{
+    components: {
         navSide
     }
 }

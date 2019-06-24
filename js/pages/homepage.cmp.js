@@ -1,7 +1,11 @@
 export default {
     template: `
     <section class="home">
-        <h2>Welcome to our website<br> we are working hard to get you the best experience, hope you enjoy  </h2>
+     
+        <div ><router-link class="em"  exact to="/email"><div class="email"></div></router-link></div> 
+        <div><router-link class="no"  to="/note"><div  class="note"></div></router-link> </div>
+        <div ><router-link class="ho"  exact to="/book"><div class="book"></div></router-link> </div> 
+
     </section>
     `
 }

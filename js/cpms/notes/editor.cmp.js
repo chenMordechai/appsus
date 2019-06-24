@@ -13,11 +13,15 @@ export default {
     name: 'notes',
     template: `
     <section class="editor-container">
-    <input type="text" v-model="txt" :placeholder="placeholderTXt"  v-on:keyup.enter="saveNute"  > </input>
-    <button v-on:click="openTxtNote"><i class="far fa-file-alt" title="text"></i> </button>
-    <button v-on:click="openTodosNote"> <i class="far fa-list-alt" title="todos"></i></button>
-    <button v-on:click="openImageNote"> <i class="far fa-image" title="image"></i> </button>   
-    <!-- <p>bla bla/p> -->
+    <input type="text" v-model="txt" :placeholder='placeholderTXt' v-on:keyup.enter="saveNute" > </input>
+    <button v-on:click="openTxtNote"><i class="far fa-file-alt"></i> </button>
+    <button v-on:click="openTodosNote"> <i class="far fa-list-alt"></i></button>
+    <button v-on:click="openImageNote"> <i class="far fa-image"></i> </button>
+    <!-- <button v-on:click="saveNute"> save </button> -->
+
+
+        <!-- <component :is="type"  v-if="type"  >  </component> -->
+        
     </section>
  
     `,

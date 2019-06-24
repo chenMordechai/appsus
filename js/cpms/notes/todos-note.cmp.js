@@ -12,8 +12,11 @@ export default {
 
     template: `
     <section class ="todos-container">
+    <!-- <input type="color" v-model="color"></input> -->
+    <!-- <input type='color' v-model="['background-color']" >BCG</input><br> -->
+       <!-- <input type='color' v-model="note.info.color">TXT</input> -->
        <label >
-       <input type='text' v-model="txt" @change="reportVal" placeholder="todo" >
+       <input type='text' v-model="txt"  placeholder="todo" >
        <i v-on:click="saveTodo" class="far fa-plus-square"></i>
 
       <div class="todo-container" v-if="info" v-for="(todo,idx) in todos">
@@ -38,13 +41,13 @@ export default {
             todos: this.info.todos,
             isDone: false,
             newTodos:[],
+            color: '',
+            'background-color':'',
             // creatAt: getTime() ,
         }
     },
     methods: {
-        reportVal() {
-            this.$emit('setVal', this.txt)
-        },
+    
         saveTodo() {
             console.log()
             if(this.info){

@@ -5,9 +5,8 @@ export default {
     name: 'txtNotes',
 
     template: `
-    <section   class="txt-note" >
+    <section  v-bind:style=" note.info" class="txt-note" >
        <label>
-           <div  v-bind:style=" note.info" class="txt-note">
        <h1>txt</h1>
       
        <input type='text' v-model="note.info.txt" @click="reportVal" placeholder="typeHere" autofocus></input>
@@ -16,7 +15,6 @@ export default {
     <p>{{note.info.txt}}</p>
        
     <button v-on:click="saveNote">Save</button>
-</div>
 
 </label>
 </section>

@@ -12,12 +12,12 @@ export default {
 
     name: 'notes',
     template: `
-    <section class="notes-container">
-    <input type="text" v-model="txt" :placeholder="placeholderTXt"> </input>
-    <button v-on:click="openTxtNote"> txt </button>
-    <button v-on:click="openTodosNote"> todos </button>
-    <button v-on:click="openImageNote"> image </button>
-    <button v-on:click="saveNute"> save </button>
+    <section class="editor-container">
+    <input type="text" v-model="txt" placeholder='enter' v-on:keyup.enter="saveNute" > </input>
+    <button v-on:click="openTxtNote"><i class="far fa-file-alt"></i> </button>
+    <button v-on:click="openTodosNote"> <i class="far fa-list-alt"></i></button>
+    <button v-on:click="openImageNote"> <i class="far fa-image"></i> </button>
+    <!-- <button v-on:click="saveNute"> save </button> -->
 
 
         <!-- <component :is="type"  v-if="type"  >  </component> -->

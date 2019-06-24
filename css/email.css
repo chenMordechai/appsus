@@ -29,6 +29,7 @@ meter {
     border: none;
 }
 
+
 .status-container {
     text-align: center
 }
@@ -147,11 +148,7 @@ button:hover {
 
 .single-email {
     display: flex;
-<<<<<<< HEAD
     width: 78%;
-=======
-    width: 88%;
->>>>>>> 23b99f2fcad3c4437cccb19bd5ae59c840aa86fa
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(218, 214, 214);
@@ -409,13 +406,13 @@ button {
     }
 
     .nav-side {
-        position: fixed;
+        display: none;
+        /* position: fixed;
         left: -250px;
         top: 160px;
         /* transform: translate(100%, 0); */
         /* transition: transform .6s; */
-        z-index: 10;
-
+        /* z-index: 10; */ 
     }
 
     .nav-side-in-mobile {
@@ -429,8 +426,9 @@ button {
         max-width: 200px;
         position: absolute;
         top: 158px;
-        left: 0;
+        left: -8px;
         margin-left: 8px;
+
     }
 
 
@@ -438,6 +436,16 @@ button {
         display: block;
         margin-right: 10px;
         z-index: 10;
+    }
+    .button-container-preview{
+        width:85%;
+    }
+    .email-filter-container input{
+        width:175px;
+    }
+    .btn-filter-container {
+        width: 420px;
+        display:flex;
     }
 
 

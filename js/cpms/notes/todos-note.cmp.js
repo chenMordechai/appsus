@@ -16,7 +16,7 @@ export default {
     <!-- <input type='color' v-model="['background-color']" >BCG</input><br> -->
        <!-- <input type='color' v-model="note.info.color">TXT</input> -->
        <label >
-       <input type='text' v-model="txt" @change="reportVal" placeholder="todo" >
+       <input type='text' v-model="txt"  placeholder="todo" >
        <i v-on:click="saveTodo" class="far fa-plus-square"></i>
 
       <div class="todo-container" v-if="info" v-for="(todo,idx) in todos">

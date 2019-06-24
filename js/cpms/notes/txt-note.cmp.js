@@ -17,6 +17,7 @@ export default {
        
     <button v-on:click="saveNote">Save</button>
 </div>
+
 </label>
 </section>
 `,
@@ -51,6 +52,7 @@ export default {
             // console.log('this.val = ',this.val)
             this.$emit('setVal', this)
         },
+       
     },
     computed: {
 

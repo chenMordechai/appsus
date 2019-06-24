@@ -13,7 +13,7 @@ export default {
     name: 'notes',
     template: `
     <section class="notes-container">
-    <input type="text" v-model="txt" placeholder='enter'> 
+    <input type="text" v-model="txt" placeholder='enter'> </input>
     <button v-on:click="openTxtNote"> txt </button>
     <button v-on:click="openTodosNote"> todos </button>
     <button v-on:click="openImageNote"> image </button>
@@ -72,7 +72,12 @@ export default {
                         src: this.txt
                     }
                 }
-            } else if (this.type === 'todos') {
+                console.log(newObject)
+                noteService.saveNote(newObject)
+                this.txt =''
+
+            }
+             else if (this.type === 'todos') {
                 console.log('todos')
                 var newObject = {
                     type: 'todos',
@@ -85,13 +90,21 @@ export default {
                         'bacground-color': '#ffff00'
                     }
                 }
-            }else if(this.type === 'txt'){
+                console.log(newObject)
+                noteService.saveNote(newObject)
+                this.txt =''
+
+
+
+            }
+
+            else if(this.type === 'txt'){
                 console.log('txt')
 
                 var newObject = {
                     type: 'txt',
                     info: {
-                        isPint: true,
+                        isPint: false,
                         id: utilService.makeId(),
                         txt:this.txt,
                         color: '#ffff00',
@@ -99,10 +112,15 @@ export default {
             
                     }
                 }
-                 
-            }//push
+                console.log(newObject)
+                noteService.saveNote(newObject)
+                this.txt =''
 
+
+            }//push
+        }
         },
+
 
         components: {
             txt,

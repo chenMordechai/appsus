@@ -45,9 +45,13 @@ function deleteNote(id) {
 }
 
 function saveNote(note) {
-    console.log('saving not')
+console.log(notesDB.length)
+    console.log('saving not' , note)
     notesDB.unshift(note)
     storageService.store(NOTES_KEY, notesDB)
+    console.log(notesDB.length)
+
+    
 
 }
 let notesDB = [{
@@ -55,7 +59,6 @@ let notesDB = [{
         info: {
             isPint: true,
             id: utilService.makeId(),
-
             txt: 'i am a text note',
             color: '#ffff00',
             'bacground-color':'#ffff00'
@@ -67,7 +70,6 @@ let notesDB = [{
         info: {
             isPint: false,
             id: utilService.makeId(),
-
             src:'https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg',
             color: '#ffff00',
             'bacground-color':'#ffff00'

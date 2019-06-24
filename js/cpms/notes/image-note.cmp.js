@@ -1,3 +1,10 @@
+import
+noteService
+from '../../services/note-service.js'
+import {
+    utilService
+} from '../../services/util.service.js'
+
 export default {
     name: 'imgNotes',
 
@@ -19,7 +26,7 @@ export default {
     data() {
         return {
             url: '',
-            img: ''
+            img: this.info.src
         }
     },
     methods: {
@@ -31,6 +38,20 @@ export default {
             this.img = this.url
 
         },
-
+        deleteNote() {
+            const id = this.info.id
+            noteService.deleteNote(id)
+         },
+         saveNote(){
+           var note ={
+             type: 'img',
+             info: {
+                 img: this.img,
+                 id: utilService.makeId(),
+             }
+           }
+             console.log('saving')
+             noteService.saveNote(note)
+         }
     }
 }

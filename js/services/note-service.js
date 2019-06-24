@@ -30,9 +30,9 @@ function query() {
 function saveTxt(note) {
     notesDB.push(note)
     storageService.store(NOTES_KEY, notesDB)
-    console.log('notesDB',notesDB)
+    console.log('notesDB', notesDB)
     console.log('in the service')
-    console.log('this.note=',note)
+    console.log('this.note=', note)
 
 }
 
@@ -53,33 +53,85 @@ function saveNote(note) {
 let notesDB = [{
         type: 'txt',
         info: {
-            isPint:true,
-            txtVal:'i am a text note',
-            colorVal:'#"#ffff00"',
-            isDone:false,
+            isPint: true,
+            id: utilService.makeId(),
+
+            txt: 'i am a text note',
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
 
         }
     },
     {
         type: 'imag',
         info: {
-            isPint:false,
-            label: 'i am label of txt',
-            opts: ['a', 'b', 'c']
+            isPint: false,
+            id: utilService.makeId(),
 
+            src:'https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg',
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
+        }
+
+    },
+    {
+
+        type: 'todos',
+        info: {
+            isPint: false,
+            id: utilService.makeId(),
+            todos: [{
+                txt: 'fiuref',
+                isDone: false
+            }, {
+                txt: 'fiuref',
+                isDone: false
+            }, {
+                txt: 'fiuref',
+                isDone: false
+            }],
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
+        }
+    },
+    {
+        type: 'imag',
+        info: {
+            isPint: false,
+            id: utilService.makeId(),
+
+            src:'https://www.ynet.co.il/PicServer5/2018/08/28/8740729/874072601001384640360no.jpg',
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
+        }
+    },
+    {
+        type: 'imag',
+        info: {
+            isPint: false,
+            id: utilService.makeId(),
+
+            src:'http://cafe.themarker.com/media/t/108/102/0/file_0_big.jpg',
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
         }
     },
     {
 
         type: 'todos',
         info: {
-            isPint:false,
+            isPint: false,
             id: utilService.makeId(),
-            label: 'i am label of todos',
-            todos: [ {txt:'fiuref',isDone:false}, {txt:'fiuref',isDone:false},{txt:'fiuref',isDone:false}],
-            editor: []
+            todos: [{
+                txt: 'frrfdsf',
+                isDone: false
+            }, {
+                txt: 'fefr',
+                isDone: false
+            }],
+            color: '#ffff00',
+            'bacground-color':'#ffff00'
         }
     },
-    
-    
+
 ]

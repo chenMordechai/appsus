@@ -3,7 +3,7 @@
 	src: url(../fonts/lobster/Lobster-Regular.ttf); */
 
 header {
-    height: 80px;
+    height: 90px;
     background-color: rgb(42, 50, 58);
     text-align: center;
     color: white;
@@ -47,7 +47,7 @@ ul.ham-btn {
     font-size: 40px;
     position: absolute;
     right: 30px;
-    top: 30px;
+    top: 25px;
 }
 .grid:hover{
     cursor: pointer;
@@ -72,40 +72,71 @@ a.ho {
 }
 
 a.no {
-
+    
     /* position: absolute;
    top: 36px;
    left: 100px; */
-    color: black;
-    background-color: aliceblue;
-
+   color: black;
+   background-color: aliceblue;
+   
 }
+       .home-container{
+       
+       }
 
 .home {
-    background-image: url('../img/background.jpg');
+    /* background-image: url('../img/background.jpg'); */
+    background-color: white;
     background-size: cover;
     height: 100vh;
     margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: lobster;
-    text-align: center;
-    font-size: 2.5rem;
-    /* font-family: lobster; */
-
+    font-size: 100px;
+   
 
 }
 
-/* section.home{
-.option{
-    /* background-color: aliceblue; */
+.note{
+    height: 300px;
+    width: 300px;
+    background-image: url('../img/note.jpg');
+    background-repeat: no-repeat;
+}
+.note:hover{
+    cursor: pointer;
+}
+.email:hover{
+    cursor: pointer;
+}
+.book:hover{
+    cursor: pointer;
+}
 
+.email{
+    height: 300px;
+    width: 300px;
+    background-image: url('../img/email.jpg');
+    background-repeat: no-repeat;
+}
+.book{
+    height: 300px;
+    width: 300px;
+    background-image: url('../img/book.jpg');
+    background-repeat: no-repeat;
+}
+.home h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 100px;
+    color: rgb(26, 19, 19)
 
-/* body home{
-    font-family: lobster;
-} */
+}
+
+.home i{
+    font-size: 250px;
+    display: none;
+}
 .grassus{
     display: flex;
     align-items: center;
@@ -116,6 +147,7 @@ a.no {
     color: white;
 }
 .grassus h1{
+    width: 100%;
     font-size: 30px;
     font-family: 'Pacifico', cursive;
     font-weight: normal;

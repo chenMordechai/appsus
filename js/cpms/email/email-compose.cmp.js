@@ -8,19 +8,20 @@ export default {
 
     template: `
     <div class="compose-container">
-    <button v-on:click="openModal">+compose</button>
+    <button v-on:click="openModal"><i class="fas fa-plus"></i> compose</button>
 
     <section  class="modal" v-show="isShown"> 
     <nav class="modal-nav">
         <h2>New Massage</h2>
     <form @submit.prevent="saveEmail">
-    <input placeholder="To" ref="to" v-model="sentEmail.from" autofocus  type="text">
-    <div class="to-from"><span>Subject:</span><input ref="subject" v-model="sentEmail.title" type="text"></div>
+    <input placeholder="To:" ref="to" v-model="sentEmail.from" autofocus  type="text">
+    <input placeholder="Subject:" ref="subject" v-model="sentEmail.title" type="text">
+    <hr>
     <textarea class="txtarea" v-model.trim="sentEmail.text"></textarea>
     </form>
     </nav>
-    <button v-on:click="closeModal" class="close-btn">Close</button>
-    <button v-on:click="saveEmail" class="sent-btn">Send</button>
+    <button v-on:click="closeModal" class="close-btn"><i class="fas fa-times"></i> Close</button>
+    <button v-on:click="saveEmail" class="sent-btn"><i class="fas fa-check"></i> Send</button>
             </section>
             </div>
             `,

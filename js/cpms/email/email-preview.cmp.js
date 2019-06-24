@@ -8,7 +8,8 @@ export default {
         <router-link :to="emailUrl" >
             <li  v-on:click="markAdRead" v-bind:class="{read:email.isRead}" class="single-email">
                 <h4>{{email.from}}</h4> 
-                <p> {{email.title}} <span> {{textToShow}}</span></p>    
+                <h4>{{email.title}}</h4> 
+                <p>  <span> {{textToShow}}</span></p>    
                 
                 <h4> {{email.date}}</h4>
             </li>
@@ -30,7 +31,9 @@ export default {
             isOpen: this.email.isRead,
             isRead: this.email.isRead,
             isFull: this.email.isFavorite,
-            isEmpty: !this.email.isFavorite
+            isEmpty: !this.email.isFavorite,
+           
+
         }
     },
     created() {
@@ -46,10 +49,16 @@ export default {
 
 
         textToShow() {
-            return this.email.txt.substring(0, 85)
-        },
-
+               let x = window.matchMedia("(max-width: 500px)")
+            
+                    if (x.matches) { // If media query matches
+                        return this.email.txt.substring(0, 65)+'...'
+                    } else {
+                        return this.email.txt.substring(0, 85)
+                    }
+              
     },
+},
     methods: {
         readClass() {
             console.log('this.email', this.email)
@@ -62,6 +71,7 @@ export default {
         markAdRead() {
             //  console.log('mark as read')
             const emailId = this.email.id
+            this.email.isRead = !this.email.isRead
             emailService.markRead(emailId)
             this.isOpen = !this.isOpen
             //  console.log('this.email',this.email)
@@ -74,6 +84,7 @@ export default {
         favoriteEmail() {
             // console.log('favorite')
             const emailId = this.email.id
+            this.email.isFavorite = !this.email.isFavorite
             emailService.faviriteEmail(emailId)
             this.isFull = !this.isFull
             this.isEmpty = !this.isEmpty
@@ -84,6 +95,7 @@ export default {
             const emailId = this.email.id
             console.log('email id = ', emailId)
             emailService.dleateEmail(emailId)
+        
 
         },
     },

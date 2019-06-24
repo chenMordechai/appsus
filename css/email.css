@@ -1,6 +1,11 @@
 .email-page-comtainer {
     display: flex;
 }
+meter {
+    width: 120px;
+    height: 30px;
+    margin-bottom: 35px;
+}
 .nav{
     font-family: cursive;
 }
@@ -122,6 +127,7 @@ button:hover {
     padding: 20px;
     text-align: center;
     background-color: white;
+    height: 650px;
 
     /* padding-inline-start: 84px; */
 
@@ -129,7 +135,7 @@ button:hover {
 
 .single-email {
     display: flex;
-    /* width: 90%; */
+    width: 78%;
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgb(218, 214, 214);
@@ -146,7 +152,7 @@ button:hover {
 }
 
 .single-email>h4 {
-    width: 100px;
+    width: 105px;
     text-align: left;
     font-size: 17px;
 
@@ -327,13 +333,29 @@ button {
 @media (max-width:740px) {
 
     .single-email p {
-        width: 100px;
+        /* width: 100px; */
+        width: 95px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
     }
-
+    
+    .single-email>p>span {
+            color: gray;
+            width: 280px;
+            left: 15px;
+            position: absolute;
+            margin-top: 20px;
+        }
+    
     .single-email {
-        width: 100%;
+        
         /* font-size: 14px; */
         margin-left: 0px;
+        border:none;
+        display: flex;
+        position: relative;
+        width: 120%;
     }
 
     .email-list {
@@ -341,19 +363,25 @@ button {
     }
 
     .button-container-preview {
-        position: relative;
-        left: 219px;
-      
+    position: relative;
+    right: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
     }
 
 
     .email-preview-container span {
-        display: none;
+        /* display: none; */
+        
     }
 
     .email-preview-container {
         flex-wrap: wrap;
         /* flex-direction: row-reverse; */
+        border-bottom: 1px dotted;
+        width: 395px;
     }
 
     .emailDetails-container {
@@ -396,10 +424,7 @@ button {
         z-index: 10;
     }
 
-}
 
-meter {
-    width: 120px;
-    height: 30px;
-    margin-bottom: 35px;
+
+
 }

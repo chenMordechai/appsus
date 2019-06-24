@@ -38,6 +38,7 @@ function getEmailById(emailId) {
 
 function dleateEmail(emailId) {
     // console.log('delete in the service', emailId)
+console.log(this.email,'this.email')
     const emailIdx = emailsDB.findIndex(email => email.id === emailId)
     const deletedEmail = emailsDB.find(email => email.id === emailId)
     // console.log(deletedEmail , 'deleted')

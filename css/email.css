@@ -1,34 +1,48 @@
 .email-page-comtainer {
     display: flex;
 }
-
+.nav{
+    font-family: cursive;
+}
 .nav-side {
-    padding-left:20px;
+    padding-left: 20px;
     font-size: 0.8rem;
-color: white;
-    background-color: rgb(119,136,153);
+    color: white;
+    background-color: rgb(172, 174, 177);
     min-width: 200px;
     height: 700px;
     max-width: 200px;
 }
-    /* position: absolute; */
 
+/* position: absolute; */
+.nav-side h2:hover {
+    cursor: pointer;
+}
 
+.button-container-preview button{
+    font-size: 20px;
+    border: none;
+}
 
- 
-.status-container{
+.status-container {
     text-align: center
 }
 
-.compose-container{
+.compose-container {
     text-align: center;
     margin: 10px;
-    
+    font-family: cursive;
+
 }
-.compose-container button{
+
+.compose-container button {
     height: 50px;
-    width: 100px;
-    border-radius: 30px
+    width: 130px;
+    border-radius: 30px;
+    border: 2px solid rgb(100, 96, 96);
+    font-family: cursive;
+    font-size: 20px;
+
 }
 
 
@@ -36,8 +50,9 @@ color: white;
     /* height: 600px; */
     /* padding: 30px; */
     /* border: 1px solid #5b5388; */
-    width:100%;
+    width: 100%;
 }
+
 .emailDetails-container {
     /* height: 600px; */
     padding: 30px;
@@ -49,25 +64,27 @@ button {
     height: 30px;
     background: white;
     border-radius: 4px;
-    border: 1px solid rgb(218, 214, 214); 
+    border: 1px solid rgb(218, 214, 214);
     min-width: 30px;
     color: rgb(115, 126, 119);
     padding: 5px;
 
 }
-button.trash{
-color: gray
+
+button.trash {
+    color: gray
 }
 
-button.star{
+button.star {
     color: yellow;
 }
 
-button.envelope{
-    color: red;
+button.envelope {
+    color: rgb(43, 20, 128);
 }
+
 button:hover {
-cursor: pointer;
+    cursor: pointer;
 }
 
 
@@ -78,149 +95,177 @@ cursor: pointer;
 .emailFrom {
     display: flex;
     justify-content: space-between
-    
 }
+
 .emailDetails-container h3 {
-   width: 150px;
-   font-size: 1.4rem;
+    width: 150px;
+    font-size: 1.4rem;
 
 
 }
+
 .emailDetails-container h3:last-child {
     text-align: right;
- }
+}
+
 .emailDetails-container p {
     height: 300px;
     border: 1px solid gray;
     padding: 10px;
- 
+
 }
-.email-list{
-    display:flex;
+
+.email-list {
+    display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    padding-inline-start: 84px;
+    background-color: white;
+
+    /* padding-inline-start: 84px; */
 
 }
 
-.single-email{
+.single-email {
     display: flex;
     /* width: 90%; */
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgb(218, 214, 214); 
+    border: 1px solid rgb(218, 214, 214);
     border-radius: 10px;
     padding: 10px;
-    height: 20px;
+    height: 35px;
     color: black;
+    /* width: 120%; */
+    margin-left: 65px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* background-color: aqua; */
+
+
 }
 
-.single-email>h4{
+.single-email>h4 {
     width: 100px;
     text-align: left;
-    
+    font-size: 17px;
+
 }
-.single-email>h4:last-child{
-    
+
+.single-email>h4:last-child {
+
     text-align: right;
-    
+
 }
-.single-email>p{
-    width: 450px;
+
+.single-email>p {
+    width: 680px;
     text-align: left;
-    
+    font-size: 16px;
+
 }
 
-.single-email>p>span{
+.single-email>p>span {
     color: gray;
-    
+
 }
 
+.button-container-preview {
+    position: absolute;
+    right: 65px;
+}
 
-
-a{
+a {
     text-decoration: none;
 }
 
-.email-open-container{
- display: flex;
+.email-open-container {
+    display: flex;
 }
-.email-filter-container{
+
+.email-filter-container {
     height: 70px;
-    background-color:rgb(119,136,153);
+    background-color: rgb(172, 174, 177);
     display: flex;
     align-items: center;
     justify-content: center
 }
-.email-filter-container select,input,button {
- height: 30px;
- border: 1px solid rgb(218, 214, 214); 
- margin:5px;
- border-radius: 4px;
+
+.email-filter-container select,
+input,
+button {
+    height: 30px;
+    border: 1px solid rgb(218, 214, 214);
+    margin: 5px;
+    border-radius: 4px;
+    padding: 4px;
 }
-.email-filter-container input{
-    width: 300px;
+
+.email-filter-container input {
+    width: 400px;
 }
 
 
 
 
 
-.modal{
-    display:flex;
-    flex-direction:column;
+.modal {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    color:white;
-    width:600px;
+    color: white;
+    width: 600px;
     height: 350px;
     position: absolute;
-    right:0px;
-    border:1px solid black;
+    right: 30%;
+    border: 3px solid black;
     bottom: 250px;
     /* visibility: hidden; */
-   
+
 
 }
 
-.modal-nav{
+.modal-nav {
     background-color: black;
     text-align: center;
     height: 45px;
     width: 100%;
-   position: inherit;
-   
+    position: inherit;
+
 
 }
-.to-from{
+
+.to-from {
     background-color: white;
-    width:100%;
-    height:30px;
-    color:black;
+    width: 100%;
+    height: 30px;
+    color: black;
     text-align: left;
     border: 1px solid lightgray;
     position: relative;
     top: 20px;
 }
-.to-from input{
-    width:89%;
+
+.to-from input {
+    width: 89%;
     height: 95%;
     border: none;
 }
 
-.to-from span{
-   
-    margin-right:8px; 
+.to-from span {
+
+    margin-right: 8px;
 }
-.txtarea{
+
+.txtarea {
     position: relative;
     width: 99%;
     top: 20px;
     border: none;
     height: 240px;
 }
-.sent-btn{
+
+.sent-btn {
     left: 5px;
     bottom: 5px;
     height: 30px;
@@ -229,9 +274,10 @@ a{
     border-radius: 4px;
     border: 1px solid rgb(200, 196, 196);
     min-width: 88px;
-    
+
 }
-.close-btn{
+
+.close-btn {
     bottom: 5px;
     height: 30px;
     background: white;
@@ -242,60 +288,108 @@ a{
     bottom: 5px;
     right: 5px;
 }
-.read{
 
-    color:red;
+.read h4 {
+    /* font-weight: normal; */
+
+    font-weight: normal;
+
 }
-.unread{
-    color:yellowgreen;
-}
+
+/* .d {
+    color: yellowgreen;
+} */
 
 .menu-btn {
     display: none;
 }
-.nav-side-in-mobile{
+
+.nav-side-in-mobile {
     display: none;
 }
-.btn-filter-container{
+
+.btn-filter-container {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: center;
 }
-.email-preview-container{
+
+.email-preview-container {
     display: flex;
     align-items: center;
+    width: 75%;
+
+    /* margin: 0 auto; */
+
 }
 
 @media (max-width:740px) {
-    .emailDetails-container{
+
+    .single-email p {
+        width: 100px;
+    }
+
+    .single-email {
+        width: 100%;
+        /* font-size: 14px; */
+        margin-left: 0px;
+    }
+
+    .email-list {
+        padding: 0px
+    }
+
+    .button-container-preview {
+        position: relative;
+        left: 219px;
+      
+    }
+
+
+    .email-preview-container span {
+        display: none;
+    }
+
+    .email-preview-container {
+        flex-wrap: wrap;
+        /* flex-direction: row-reverse; */
+    }
+
+    .emailDetails-container {
         width: 100%
     }
+
     .emailApp-container {
         width: 100%
     }
-    .nav-side{
-            position: fixed;
-            left: -200px;
-            top: 140px;
-            /* transform: translate(100%, 0); */
-            /* transition: transform .6s; */
-            z-index: 10;
-        
-      }
-      .nav-side-in-mobile{
-        display: block;
-            background-color: lightsalmon;
-            min-width: 200px;
-            height: 700px;
-            max-width: 200px;
-            position: absolute;
-            top: 138px;
-            left: 0;
-            margin-left: 8px;
-      }
 
-    
+    .nav-side {
+        position: fixed;
+        left: -250px;
+        top: 160px;
+        /* transform: translate(100%, 0); */
+        /* transition: transform .6s; */
+        z-index: 10;
+
+    }
+
+    .nav-side-in-mobile {
+        display: block;
+        color: white;
+        background-color: rgb(172, 174, 177);
+        padding-left: 20px;
+        font-size: 0.8rem;
+        min-width: 200px;
+        height: 700px;
+        max-width: 200px;
+        position: absolute;
+        top: 158px;
+        left: 0;
+        margin-left: 8px;
+    }
+
+
     .menu-btn {
         display: block;
         margin-right: 10px;
@@ -303,7 +397,8 @@ a{
     }
 
 }
-meter{
+
+meter {
     width: 120px;
     height: 30px;
     margin-bottom: 35px;

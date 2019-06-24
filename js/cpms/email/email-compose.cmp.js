@@ -9,10 +9,12 @@ export default {
     template: `
     <div class="compose-container">
     <button v-on:click="openModal">+compose</button>
+
     <section  class="modal" v-show="isShown"> 
-    <nav class="modal-nav">New Massage
+    <nav class="modal-nav">
+        <h2>New Massage</h2>
     <form @submit.prevent="saveEmail">
-    <div  class="to-from"><span>To:</span><input  ref="to" v-model="sentEmail.from" autofocus  type="text"></div>
+    <input placeholder="To" ref="to" v-model="sentEmail.from" autofocus  type="text">
     <div class="to-from"><span>Subject:</span><input ref="subject" v-model="sentEmail.title" type="text"></div>
     <textarea class="txtarea" v-model.trim="sentEmail.text"></textarea>
     </form>
@@ -68,3 +70,16 @@ export default {
 
     }
 }
+
+{/* <section  class="modal" v-show="isShown"> 
+<nav class="modal-nav">
+    <h2>New Massage</h2>
+<form @submit.prevent="saveEmail">
+<div  class="to-from"><span>To:</span><input placeholder="To" ref="to" v-model="sentEmail.from" autofocus  type="text"></div>
+<div class="to-from"><span>Subject:</span><input ref="subject" v-model="sentEmail.title" type="text"></div>
+<textarea class="txtarea" v-model.trim="sentEmail.text"></textarea>
+</form>
+</nav>
+<button v-on:click="closeModal" class="close-btn">Close</button>
+<button v-on:click="saveEmail" class="sent-btn">Send</button>
+        </section> */}

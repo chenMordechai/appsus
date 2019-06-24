@@ -123,7 +123,6 @@ let notesInit = [{
         info: {
             isPint: false,
             id: 'fhfdj',
-
             src: 'https://www.ynet.co.il/PicServer5/2018/08/28/8740729/874072601001384640360no.jpg',
             color: '#ffff00',
             'bacground-color': '#ffff00'

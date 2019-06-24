@@ -1,56 +1,86 @@
-
 /* @font-face {
 	font-family: lobster;
 	src: url(../fonts/lobster/Lobster-Regular.ttf); */
 
-header{
-    height: 60px;
+header {
+    height: 80px;
     background-color: rgb(42, 50, 58);
     text-align: center;
     color: white;
 }
-.headers{ 
-    visibility: hidden; 
+
+.headers {
+    visibility: hidden;
     background-color: aliceblue;
- }
- 
-header nav{
+}
+
+header nav {
     padding-top: 20px;
 }
-ul.ham-btn{
-    /* background-color: beige; */
+
+ul.ham-btn {
+    list-style-type: none;
+    /* background-color: red;
+   width: 150px;
+   height: 150px;
+   position: absolute;
+   right: 100px;  */
+}
+
+.option {
+    background-color: rgb(255, 251, 251);
+    border: 1px solid black;
+    border-radius: 10px;
+    /* opacity: 0.3; */
+    width: 140px;
+    height: 120px;
     position: absolute;
-   top: 0px;
-   list-style-type: none;
-  
-}
+    right: 100px;
+    font-size: 50px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+} 
 
-a.em{
-   position: absolute;
+.grid {
+    font-size: 40px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+.grid:hover{
+    cursor: pointer;
+}
+a.em {
+    /* position: absolute;
    top: 4px;
-   left: 100px;
-   color:black;
-   /* width:40px; */
-   background-color: aliceblue;
+   left: 100px; */
+    color: black;
+    /* width:40px; */
+    background-color: aliceblue;
 }
-a.ho{
- 
-   position: absolute;
+
+a.ho {
+
+    /* position: absolute;
    top: 20px;
-   left: 100px;
-   color:black;
-   background-color: aliceblue;
+   left: 100px; */
+    color: black;
+    background-color: aliceblue;
 
 }
-a.no{
-  
-   position: absolute;
+
+a.no {
+
+    /* position: absolute;
    top: 36px;
-   left: 100px;
-   color:black;
-   background-color: aliceblue;
+   left: 100px; */
+    color: black;
+    background-color: aliceblue;
 
 }
+
 .home {
     background-image: url('../img/background.jpg');
     background-size: cover;
@@ -61,12 +91,13 @@ a.no{
     justify-content: center;
     align-items: center;
     font-family: lobster;
-    text-align:center;
+    text-align: center;
     font-size: 2.5rem;
     /* font-family: lobster; */
-    
-   
+
+
 }
+
 /* section.home{
 .option{
     /* background-color: aliceblue; */
@@ -75,4 +106,17 @@ a.no{
 /* body home{
     font-family: lobster;
 } */
-
+.grassus{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    color: white;
+}
+.grassus h1{
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+}

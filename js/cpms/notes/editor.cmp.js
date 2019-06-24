@@ -74,10 +74,16 @@ export default {
                 var newObject = {
                     type: 'imag',
                     info: {
+                        id:utilService.makeId(),
                         isPint: false,
                         src: this.txt
                     }
                 }
+                console.log('ananax',newObject.info.id)
+                noteService.saveNote(newObject)
+                this.txt =''
+
+            
             } else if (this.type === 'todos') {
                 console.log(' you insert a todos')
                 var newTodo = this.txt
@@ -99,14 +105,22 @@ export default {
                         'bacground-color': '#ffff00'
                     }
                 }
-                console.log('newObject',newObject)
+                console.log(newObject)
+                noteService.saveNote(newObject)
+                this.txt =''
+
+
+
+            
+
+            
             } else if (this.type === 'txt') {
                 console.log('txt')
 
                 var newObject = {
                     type: 'txt',
                     info: {
-                        isPint: true,
+                        isPint: false,
                         id: utilService.makeId(),
                         txt: this.txt,
                         color: '#ffff00',
@@ -114,14 +128,19 @@ export default {
 
                     }
                 }
+                console.log(newObject)
+                noteService.saveNote(newObject)
+                this.txt =''
+
 
             }//push
         }
-    },
+        },
 
-    components: {
-        txt,
-        imag,
-        todos
-    },
-}
+
+        components: {
+            txt,
+            imag,
+            todos
+        },
+    }

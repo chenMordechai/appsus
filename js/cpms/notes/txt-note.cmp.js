@@ -11,12 +11,13 @@ export default {
        <h1>txt</h1>
       
        <input type='text' v-model="note.info.txtVal" @click="reportVal" placeholder="typeHere" autofocus></input>
-       <input type='color' v-model="note.info.background-color" @change="reportVal">BCG</input><br>
+       <input type='color' v-model="note.info['background-color']" @change="reportVal">BCG</input><br>
        <input type='color' v-model="note.info.color" @change="reportVal">TXT</input>
     <p>{{note.info.txtVal}}</p>
        
     <button v-on:click="saveNote">Save</button>
 </div>
+
 </label>
 </section>
 `,
@@ -51,6 +52,7 @@ export default {
             // console.log('this.val = ',this.val)
             this.$emit('setVal', this)
         },
+       
     },
     computed: {
 

@@ -69,11 +69,12 @@ export default {
                 var newObject = {
                     type: 'imag',
                     info: {
+                        id:utilService.makeId(),
                         isPint: false,
                         src: this.txt
                     }
                 }
-                console.log(newObject)
+                console.log('ananax',newObject.info.id)
                 noteService.saveNote(newObject)
                 this.txt =''
 

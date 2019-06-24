@@ -23,13 +23,13 @@ export default {
     },
     computed: {
         pintNotesToShow() {
-            console.log('gggggggggggggggggggg', this.notes)
+            // console.log('gggggggggggggggggggg', this.notes)
             return this.notes.filter(note => {
                 return note.info.isPint
             })
         },
         unPintNotesToShow() {
-            console.log('gggggggggggggggggggg', this.notes)
+            // console.log('gggggggggggggggggggg', this.notes)
             return this.notes.filter(note => {
                 return !(note.info.isPint)
             })

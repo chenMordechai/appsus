@@ -13,6 +13,8 @@ export default {
        <label>
        <!-- <h1>Image</h1> -->
        <img class="img-note" v-bind:src="img">
+       <button  v-on:click="pintNote"><i class="fas fa-thumbtack"></i></button>
+
        <button v-on:click="deleteNote"><i class="fas fa-trash"></i></button>
        <!-- <button v-on:click="saveNote"><i class="fas fa-plus"></i></button> -->
        <br>
@@ -40,8 +42,15 @@ export default {
         // },
         deleteNote() {
             const id = this.info.id
+            console.log(id)
             noteService.deleteNote(id)
+            
          },
+         pintNote(){
+             const id = this.info.id
+             console.log(this.info)
+            noteService.pintNote(id)
+        }
         //  saveNote(){
         //    var note ={
         //      type: 'img',

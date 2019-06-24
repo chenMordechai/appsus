@@ -7,16 +7,16 @@ export default {
     template: `
     <section   class="txt-note" >
        <label>
+           <div  v-bind:style=" note.info" class="txt-note">
        <h1>txt</h1>
       
-       <div  v-bind:style=" note.info" class="txt-note">
        <input type='text' v-model="note.info.txtVal" @click="reportVal" placeholder="typeHere" autofocus></input>
        <input type='color' v-model="note.info.background-color" @change="reportVal">BCG</input><br>
        <input type='color' v-model="note.info.color" @change="reportVal">TXT</input>
     <p>{{note.info.txtVal}}</p>
        
     <button v-on:click="saveNote">Save</button>
-    </div>
+</div>
 </label>
 </section>
 `,

@@ -123,8 +123,8 @@ export default {
                         isPint: false,
                         id: utilService.makeId(),
                         txt: this.txt,
-                        color: '#ffff00',
-                        'bacground-color': '#ffff00'
+                        color: '#000000',
+                        'bacground-color': '#000000'
 
                     }
                 }

@@ -20,6 +20,8 @@ export default {
        <br>
       <input type='text' v-model="txt" @change="reportVal" >
       <button v-on:click="saveTodo"> save</button>
+      <input type='color' v-model="note.info.background-color" @change="reportVal">BCG</input><br>
+       <input type='color' v-model="note.info.color" @change="reportVal">TXT</input>
       <br>
       <div class="todo-container" v-for="(todo,idx) in todos">
     <button v-on:click ="deleteTodo(idx)"> X</button> 

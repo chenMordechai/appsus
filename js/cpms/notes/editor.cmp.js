@@ -30,7 +30,8 @@ export default {
         return {
             type: '',
             txt: '',
-            
+            todos:[]
+
 
             // placeholder: 'kjdshf'
         }
@@ -46,7 +47,7 @@ export default {
 
         console.log('created list-note', this.notes)
     },
-    created() {},
+    created() { },
     methods: {
         openTxtNote() {
             this.type = 'txt'
@@ -76,16 +77,24 @@ export default {
                 noteService.saveNote(newObject)
                 this.txt =''
 
+            
+            } else if (this.type === 'todos') {
+                console.log(' you insert a todos')
+                var newTodo = this.txt
+                 var newTodos = newTodo.split(',')
+                    console.log('newTodo is', newTodo)
+                    for (var i = 0; i < newTodos.length; i++){
+                        this.todos.push({txt:newTodos[i],isDone:false})
+                    
             }
-             else if (this.type === 'todos') {
-                console.log('todos')
+
                 var newObject = {
                     type: 'todos',
                     info: {
                         isPint: false,
                         id: utilService.makeId(),
-                        // todos:[]
-                         
+                        todos:this.todos,
+
                         color: '#ffff00',
                         'bacground-color': '#ffff00'
                     }
@@ -96,9 +105,10 @@ export default {
 
 
 
-            }
+            
 
-            else if(this.type === 'txt'){
+            
+            } else if (this.type === 'txt') {
                 console.log('txt')
 
                 var newObject = {
@@ -106,10 +116,10 @@ export default {
                     info: {
                         isPint: false,
                         id: utilService.makeId(),
-                        txt:this.txt,
+                        txt: this.txt,
                         color: '#ffff00',
-                        'bacground-color':'#ffff00'
-            
+                        'bacground-color': '#ffff00'
+
                     }
                 }
                 console.log(newObject)

@@ -13,7 +13,7 @@ export default {
     name: 'notes',
     template: `
     <section class="notes-container">
-    <input type="text" v-model="txt" placeholder='enter'> </input>
+    <input type="text" v-model="txt" :placeholder="placeholderTXt"> </input>
     <button v-on:click="openTxtNote"> txt </button>
     <button v-on:click="openTodosNote"> todos </button>
     <button v-on:click="openImageNote"> image </button>
@@ -30,7 +30,8 @@ export default {
         return {
             type: '',
             txt: '',
-            todos:[]
+            todos:[],
+            placeholderTXt: 'choose note type'
 
 
             // placeholder: 'kjdshf'
@@ -51,16 +52,20 @@ export default {
     methods: {
         openTxtNote() {
             this.type = 'txt'
+            this.placeholderTXt= 'Add a text note'
+            
 
 
             // console.log(this.type)
         },
         openTodosNote() {
             this.type = 'todos'
+            this.placeholderTXt= 'Add a todos note'
             // console.log(this.type)
         },
         openImageNote() {
             this.type = 'imag'
+            this.placeholderTXt= 'Add an image URL'
             // console.log(this.type)
         },
         saveNute() {

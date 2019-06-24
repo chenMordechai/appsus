@@ -56,8 +56,18 @@ computed:{
     
                   
     },
+          markAdRead(){
+             //  console.log('mark as read')
+              const emailId =this.email.id
+              emailService.markRead(emailId)
+              this.isOpen = !this.isOpen 
+             //  console.log('this.email',this.email)
+             //  console.log('isOpen',this.isOpen)
+              this.isClose = !this.isClose
+             //  console.log('isClose',this.isClose)         
+          },
    
-},methods:{
+
     favoriteEmail(){
         // console.log('favorite')
         const emailId =this.email.id
@@ -73,16 +83,6 @@ computed:{
          emailService.dleateEmail(emailId)
         
      },
-     markAdRead(){
-        //  console.log('mark as read')
-         const emailId =this.email.id
-         emailService.markRead(emailId)
-         this.isOpen = !this.isOpen 
-        //  console.log('this.email',this.email)
-        //  console.log('isOpen',this.isOpen)
-         this.isClose = !this.isClose
-        //  console.log('isClose',this.isClose)         
-     }
 },
 
 

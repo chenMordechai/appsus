@@ -155,3 +155,8 @@ a.no {
     font-family: 'Pacifico', cursive;
     font-weight: normal;
 }
+
+.link{
+    border: 1px solid red;
+    margin: 10px;
+}

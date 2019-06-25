@@ -12,7 +12,7 @@ export default {
 
     <section class="email-open-container" v-if="email">
     <div class="nav-side">
-    <nav-side> </nav-side>
+    <nav-side > </nav-side>
 </div>
 <div class="emailDetails-container">
     <button ><router-link :to="emailUrl" ><i class="fas fa-long-arrow-alt-left"></i></router-link></button> 
